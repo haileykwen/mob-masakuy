@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Image, ScrollView, StyleSheet, View } from 'react-native';
 import { ImgOnboarding } from '../../assets/images';
-import { Button, HeadingPrimary, ParagraphPrimary } from '../../components';
+import { Button, Heading, Paragraph } from '../../components';
 import { Lang } from '../../configs';
 import { Colors, GlobalStyle } from '../../styles';
 
@@ -12,8 +12,8 @@ class Onboarding extends Component {
                 <View style={styles.container}>
                     <Image style={styles.image} source={ImgOnboarding} />
                     <View style={styles.wrapper}>
-                        <HeadingPrimary text={Lang.EN.startCooking} style={styles.heading} />
-                        <ParagraphPrimary text={Lang.EN.joinCommunity} style={styles.paragraph} />
+                        <Heading type='primary' text={Lang.EN.startCooking} style={styles.heading} />
+                        <Paragraph type='primary' text={Lang.EN.joinCommunity} style={styles.paragraph} />
                         <Button text={Lang.EN.getStarted} />
                     </View>
                 </View>

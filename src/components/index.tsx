@@ -1,11 +1,13 @@
 import Button from "./button";
 import Gap from "./gap";
-import ParagraphPrimary from "./paragraphPrimary";
-import HeadingPrimary from "./headingPrimary";
+import Paragraph from "./paragraph";
+import Heading from "./heading";
+import Input from "./input";
 
 export {
     Button,
     Gap,
-    ParagraphPrimary,
-    HeadingPrimary
+    Paragraph,
+    Heading,
+    Input
 }

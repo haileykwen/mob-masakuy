@@ -19,7 +19,7 @@ const GlobalStyle = {
 
     LP1: 27,
     LP2: 25,
-    LP3: 'auto',
+    LP3: 12.5,
 
     fullWidth: Dimensions.get('window').width,
     fullHeight: Dimensions.get('window').height,
