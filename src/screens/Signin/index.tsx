@@ -37,6 +37,7 @@ export default Signin;
 
 const styles = StyleSheet.create({
     container: {
+        minHeight: GlobalStyle.fullHeight,
         padding: GlobalStyle.paddingPrimary,
         justifyContent: 'center',
         alignItems: 'center'
