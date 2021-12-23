@@ -27,25 +27,35 @@ class VerificationCode extends Component<VerificationCodeProps, VerificationCode
 
     getMinute(): any {
         let time = this.state.timer;
-        let floor = Math.floor(time / 60);
-        let minute = `${floor}`;
         
-        if (minute.length < 2) {
-            return `0` + minute;
+        if (time > 0) {
+            let floor = Math.floor(time / 60);
+            let minute = `${floor}`;
+            
+            if (minute.length < 2) {
+                return '0' + minute;
+            } else {
+                return minute;
+            }
         } else {
-            return minute;
+            return '00';
         }
     }
 
     getSecond(): any {
         let time = this.state.timer;
-        let mod = time % 60;
-        let second = `${mod}`;
         
-        if (second.length < 2) {
-            return `0` + second;
+        if (time > 0) {
+            let mod = time % 60;
+            let second = `${mod}`;
+            
+            if (second.length < 2) {
+                return '0' + second;
+            } else {
+                return second;
+            }
         } else {
-            return second;
+            return '00';
         }
     }
 
