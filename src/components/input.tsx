@@ -7,19 +7,25 @@ interface InputProps {
     placeholder?: string,
     value?: string,
     onChangeText?: any,
-    type: string
+    type: string,
+    error?: any
 }
 
-const Input = ({placeholder, value, onChangeText, type}: InputProps) => {
+const Input = ({placeholder, value, onChangeText, type, error}: InputProps) => {
     const [showPassword, setShowPassword] = React.useState(true);
+    const [focus, setFocus] = React.useState(false);
 
     return (
-        <View style={styles.container}>
+        <View style={error ? styles.error : focus ? styles.active : styles.blur}>
             <Image style={styles.icon} source={type === 'email' ? IcMesssage : IcLock} />
             <TextInput 
                 secureTextEntry={type === 'password' && showPassword ? true : false}
                 placeholder={placeholder} 
                 style={styles.input} 
+                onChangeText={onChangeText}
+                value={value}
+                onFocus={() => setFocus(true)}
+                onBlur={() => setFocus(false)}
             />
             {type === 'password' &&
                 <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
@@ -33,12 +39,30 @@ const Input = ({placeholder, value, onChangeText, type}: InputProps) => {
 export default Input;
 
 const styles = StyleSheet.create({
-    container: {
+    blur: {
         flexDirection: 'row',
         paddingVertical: GlobalStyle.paddingTertiary,
         paddingHorizontal: GlobalStyle.paddingPrimary,
         borderColor: Colors.outline,
         borderWidth: 1,
+        borderRadius: GlobalStyle.radiusPrimary,
+        alignItems: 'center'
+    },
+    active: {
+        flexDirection: 'row',
+        paddingVertical: GlobalStyle.paddingTertiary,
+        paddingHorizontal: GlobalStyle.paddingPrimary,
+        borderColor: Colors.primary,
+        borderWidth: 2,
+        borderRadius: GlobalStyle.radiusPrimary,
+        alignItems: 'center'
+    },
+    error: {
+        flexDirection: 'row',
+        paddingVertical: GlobalStyle.paddingTertiary,
+        paddingHorizontal: GlobalStyle.paddingPrimary,
+        borderColor: Colors.error,
+        borderWidth: 2,
         borderRadius: GlobalStyle.radiusPrimary,
         alignItems: 'center'
     },

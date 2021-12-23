@@ -11,7 +11,8 @@ const Lang = {
         login: "Masuk",
         orContinueWith: "Atau lanjutkan dengan",
         dontHaveAccount: "Belum punya akun?",
-        signup: "Daftar"
+        signup: "Daftar",
+        required: "Harus diisi",
     },
     EN: {
         startCooking: "Start Cooking",
@@ -25,7 +26,8 @@ const Lang = {
         login: "Login",
         orContinueWith: "Or continue with",
         dontHaveAccount: "Don't have account?",
-        signup: "Sign Up"
+        signup: "Sign Up",
+        required: "This field is required"
     }
 }
 

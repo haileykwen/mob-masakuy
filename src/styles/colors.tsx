@@ -6,7 +6,8 @@ const Colors = {
     textSecondary: '#9FA5C0',
 
     white: '#FFFFFF',
-    outline: '#D0DBEA'
+    outline: '#D0DBEA',
+    error: '#FF9494'
 }
 
 export default Colors;

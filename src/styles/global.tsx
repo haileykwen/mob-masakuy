@@ -1,3 +1,4 @@
+import { StatusBar } from "react-native";
 import { Dimensions } from "react-native";
 
 const GlobalStyle = {
@@ -23,6 +24,7 @@ const GlobalStyle = {
 
     fullWidth: Dimensions.get('window').width,
     fullHeight: Dimensions.get('window').height,
+    statusBarHeight: StatusBar.currentHeight === undefined ? 24 : StatusBar.currentHeight,
 
     radiusPrimary: 32,
 

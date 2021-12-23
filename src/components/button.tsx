@@ -5,12 +5,13 @@ import { Colors, GlobalStyle } from '../styles';
 
 interface ButtonProps {
     text: string,
-    type?: string
+    type?: string,
+    onPress?: any
 }
 
-const Button = ({text, type}: ButtonProps) => {
+const Button = ({text, type, onPress}: ButtonProps) => {
     return (
-        <TouchableOpacity style={styles({type, text}).container}>
+        <TouchableOpacity onPress={onPress} style={styles({type, text}).container}>
             {type && type === 'google' && <Image style={styles({type, text}).icon} source={IcGoogle} />}
             <Text style={styles({type, text}).text}>{text}</Text>
         </TouchableOpacity>
