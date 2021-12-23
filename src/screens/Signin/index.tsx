@@ -7,7 +7,7 @@ import { Colors, GlobalStyle } from '../../styles';
 class Signin extends Component {
     render() {
         return (
-            <ScrollView>
+            <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
                 <View style={styles.container}>
                     <Heading type='primary' style={styles.heading} text={Lang.EN.wellcomeBack} />
                     <Paragraph text={Lang.EN.enterAccount} type='secondary' style={styles.paragraph} />
@@ -36,6 +36,9 @@ class Signin extends Component {
 export default Signin;
 
 const styles = StyleSheet.create({
+    scrollView: {
+        minHeight: GlobalStyle.fullHeight
+    },
     container: {
         minHeight: GlobalStyle.fullHeight,
         padding: GlobalStyle.paddingPrimary,
