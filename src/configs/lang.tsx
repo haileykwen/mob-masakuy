@@ -13,6 +13,15 @@ const Lang = {
         dontHaveAccount: "Belum punya akun?",
         signup: "Daftar",
         required: "Harus diisi",
+        wellcome: "Selamat datang!",
+        haveAnAccount: "Sudah punya akun?",
+        invalidEmail: "Email tidak valid",
+        min8: "Minimal 8 karakter",
+        includeUppercase: "Mengandung huruf besar",
+        includeLowercase: "Mengandung huruf kecil",
+        includeNumber: "Mengandung numor",
+        includeSymbol: "Mengamdung simbol",
+        passwordMustContain: "Kata sandi kamu harus mengandung:"
     },
     EN: {
         startCooking: "Start Cooking",
@@ -27,7 +36,16 @@ const Lang = {
         orContinueWith: "Or continue with",
         dontHaveAccount: "Don't have account?",
         signup: "Sign Up",
-        required: "This field is required"
+        required: "This field is required",
+        wellcome: "Wellcome!",
+        haveAnAccount: "Have an account?",
+        invalidEmail: "Invalid email",
+        min8: "Atleast 8 characters",
+        includeUppercase: "Contains uppercase",
+        includeLowercase: "Contains lowercase",
+        includeNumber: "Contains number",
+        includeSymbol: "Contains symbol",
+        passwordMustContain: "Your password must contain:"
     }
 }
 

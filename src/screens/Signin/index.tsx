@@ -25,7 +25,7 @@ class Signin extends Component {
                                     type='email'
                                     value={values.email}
                                     onChangeText={handleChange('email')}
-                                    error={errors.email}
+                                    error={errors.email && touched.email}
                                 />
                                 {errors.email && touched.email && <Paragraph style={styles.error} type='tertiary' text={errors.email} />}
                                 <Gap height={GlobalStyle.paddingTertiary} />
@@ -34,7 +34,7 @@ class Signin extends Component {
                                     type='password' 
                                     value={values.password}
                                     onChangeText={handleChange('password')}
-                                    error={errors.password}
+                                    error={errors.password && touched.password}
                                 />
                                 {errors.password && touched.password && <Paragraph style={styles.error} type='tertiary' text={errors.password} />}
 
@@ -67,6 +67,7 @@ const styles = StyleSheet.create({
         minHeight: GlobalStyle.fullHeight - GlobalStyle.statusBarHeight,
         padding: GlobalStyle.paddingPrimary,
         justifyContent: 'center',
+        backgroundColor: Colors.white
     },
     heading: {
         textAlign: 'center',

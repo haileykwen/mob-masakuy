@@ -1,9 +1,9 @@
 import React from 'react'
-import { Onboarding, Signin } from './src/screens';
+import { Onboarding, Signin, Signup } from './src/screens';
 
 const App = () => {
     return (
-        <Signin />
+        <Signup />
     );
 }
 
