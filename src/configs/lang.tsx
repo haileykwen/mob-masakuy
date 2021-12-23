@@ -29,7 +29,10 @@ const Lang = {
         resend: "Kirim ulang",
         passwordRecovery: "Reset kata sandi",
         enterEmailForRecovery: "Masukkan email untuk reset kata sandi",
-        sendOtp: "Kirim OTP"
+        sendOtp: "Kirim OTP",
+        resetYourPassword: "Reset kata sandi",
+        enterYourPassword: "Masukkan kata sandi",
+        reset: "Reset"
     },
     EN: {
         startCooking: "Start Cooking",
@@ -38,7 +41,7 @@ const Lang = {
         wellcomeBack: "Wellcome Back!",
         enterAccount: "Please enter your account here",
         email: "Email",
-        password: "Kata Sandi",
+        password: "Password",
         forgotPassword: "Forgot password?",
         login: "Login",
         orContinueWith: "Or continue with",
@@ -61,7 +64,10 @@ const Lang = {
         resend: "Send again",
         passwordRecovery: "Password recovery",
         enterEmailForRecovery: "Enter your email to recover your password",
-        sendOtp: "Send OTP"
+        sendOtp: "Send OTP",
+        resetYourPassword: "Reset your password",
+        enterYourPassword: "Please enter your password",
+        reset: "Reset"
     }
 }
 

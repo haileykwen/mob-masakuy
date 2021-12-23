@@ -11,3 +11,7 @@ export const initFormSignup = {
 export const initRecoverPassword = {
     email: ''
 }
+
+export const initNewPassword = {
+    password: ''
+}

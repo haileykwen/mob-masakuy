@@ -1,9 +1,9 @@
 import React from 'react'
-import { Onboarding, PasswordRecovery, PasswordRecoveryCode, Signin, Signup, VerificationCode } from './src/screens';
+import { NewPassword, Onboarding, PasswordRecovery, PasswordRecoveryCode, Signin, Signup, VerificationCode } from './src/screens';
 
 const App = () => {
     return (
-        <PasswordRecoveryCode />
+        <NewPassword />
     );
 }
 
