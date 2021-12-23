@@ -21,7 +21,12 @@ const Lang = {
         includeLowercase: "Mengandung huruf kecil",
         includeNumber: "Mengandung numor",
         includeSymbol: "Mengamdung simbol",
-        passwordMustContain: "Kata sandi kamu harus mengandung:"
+        passwordMustContain: "Kata sandi kamu harus mengandung:",
+        checkYourEmail: "Cek email kamu",
+        weSendOTP: "Kami telah mengirim OTP ke email kamu",
+        codeExpire: "Kode berakhir dalam:",
+        verify: "Verifikasi",
+        resend: "Kirim ulang"
     },
     EN: {
         startCooking: "Start Cooking",
@@ -45,7 +50,12 @@ const Lang = {
         includeLowercase: "Contains lowercase",
         includeNumber: "Contains number",
         includeSymbol: "Contains symbol",
-        passwordMustContain: "Your password must contain:"
+        passwordMustContain: "Your password must contain:",
+        checkYourEmail: "Check your email",
+        weSendOTP: "We have send OTP to your email",
+        codeExpire: "Code expires in:",
+        verify: "Verify",
+        resend: "Send again"
     }
 }
 

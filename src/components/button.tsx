@@ -26,14 +26,16 @@ const styles = ({type}: ButtonProps) => StyleSheet.create({
         justifyContent: 'center',
         paddingVertical: GlobalStyle.paddingSecondary,
         alignItems: 'center',
-        backgroundColor: type && type === 'google' ? Colors.secondary : Colors.primary,
+        backgroundColor: type && type === 'google' ? Colors.secondary : type === 'outline' ? 'none' : Colors.primary,
         borderRadius: GlobalStyle.radiusPrimary,
-        width: '100%'
+        width: '100%',
+        borderColor: type && type === 'outline' ? Colors.outline : 'none',
+        borderWidth: type && type === 'outline' ? 1 : 0
     },
     text: {
         fontFamily: GlobalStyle.fontPrimaryBold,
         fontSize: GlobalStyle.P2,
-        color: Colors.white
+        color: type && type === 'outline' ? Colors.outline : Colors.white
     },
     icon: {
         width: 24,
