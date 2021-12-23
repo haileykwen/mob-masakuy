@@ -39,3 +39,10 @@ export const validationFormSignup = Yup.object().shape({
         )
         .required(Lang.EN.required)
 });
+
+export const validationRecoverPassword = Yup.object().shape({
+    email: Yup
+        .string()
+        .email(Lang.EN.invalidEmail)
+        .required(Lang.EN.required)
+});

@@ -7,3 +7,7 @@ export const initFormSignup = {
     email: '',
     password: ''
 }
+
+export const initRecoverPassword = {
+    email: ''
+}

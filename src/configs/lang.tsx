@@ -26,7 +26,10 @@ const Lang = {
         weSendOTP: "Kami telah mengirim OTP ke email kamu",
         codeExpire: "Kode berakhir dalam:",
         verify: "Verifikasi",
-        resend: "Kirim ulang"
+        resend: "Kirim ulang",
+        passwordRecovery: "Reset kata sandi",
+        enterEmailForRecovery: "Masukkan email untuk reset kata sandi",
+        sendOtp: "Kirim OTP"
     },
     EN: {
         startCooking: "Start Cooking",
@@ -55,7 +58,10 @@ const Lang = {
         weSendOTP: "We have send OTP to your email",
         codeExpire: "Code expires in:",
         verify: "Verify",
-        resend: "Send again"
+        resend: "Send again",
+        passwordRecovery: "Password recovery",
+        enterEmailForRecovery: "Enter your email to recover your password",
+        sendOtp: "Send OTP"
     }
 }
 
