@@ -5,7 +5,10 @@ import { Button, Heading, Paragraph } from '../../components';
 import { Lang } from '../../configs';
 import { Colors, GlobalStyle } from '../../styles';
 
-class Onboarding extends Component {
+interface OnboardingProps {
+    navigation: any
+}
+class Onboarding extends Component<OnboardingProps, {}> {
     render() {
         return (
             <ScrollView showsVerticalScrollIndicator={false}>
@@ -14,7 +17,7 @@ class Onboarding extends Component {
                     <View style={styles.wrapper}>
                         <Heading type='primary' text={Lang.EN.startCooking} style={styles.heading} />
                         <Paragraph type='primary' text={Lang.EN.joinCommunity} style={styles.paragraph} />
-                        <Button text={Lang.EN.getStarted} />
+                        <Button onPress={() => this.props.navigation.replace('SignIn')} text={Lang.EN.getStarted} />
                     </View>
                 </View>
             </ScrollView>

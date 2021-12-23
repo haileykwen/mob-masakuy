@@ -7,7 +7,11 @@ import { Formik } from 'formik';
 import { initRecoverPassword } from '../../configs/initialValues';
 import { validationRecoverPassword } from '../../configs/validations';
 
-class PasswordRecovery extends Component {
+interface PasswordRecoveryProps {
+    navigation: any
+}
+
+class PasswordRecovery extends Component<PasswordRecoveryProps, {}> {
     render() {
         return (
             <ScrollView showsVerticalScrollIndicator={false}>
@@ -17,7 +21,10 @@ class PasswordRecovery extends Component {
                     <Formik
                         initialValues={initRecoverPassword}
                         validationSchema={validationRecoverPassword}
-                        onSubmit={values => console.log(values)}
+                        onSubmit={values => {
+                            console.log(values);
+                            this.props.navigation.replace('PasswordRecoveryCode');
+                        }}
                     >
                         {({ errors, touched, values, handleSubmit, handleChange }) => (
                             <View>

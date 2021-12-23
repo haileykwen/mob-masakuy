@@ -8,7 +8,11 @@ import { initFormSignup } from '../../configs/initialValues';
 import { validationFormSignup } from '../../configs/validations';
 import { Colors, GlobalStyle } from '../../styles';
 
-class Signup extends Component {
+interface SignupProps {
+    navigation: any
+}
+
+class Signup extends Component<SignupProps, {}> {
     render() {
         return (
             <ScrollView showsVerticalScrollIndicator={false}>
@@ -19,7 +23,10 @@ class Signup extends Component {
                     <Formik
                         initialValues={initFormSignup}
                         validationSchema={validationFormSignup}
-                        onSubmit={values => console.log(values)}
+                        onSubmit={values => {
+                            console.log(values);
+                            this.props.navigation.replace('VerificationCode');
+                        }}
                     >
                         {({ handleChange, values, handleSubmit, errors, touched }) => (
                             <View>
@@ -107,7 +114,7 @@ class Signup extends Component {
                                 <Gap height={GlobalStyle.paddingPrimary} />
                                 <View style={styles.dontHaveAccountWrapper}>
                                     <Paragraph text={Lang.EN.haveAnAccount} type='secondary' style={styles.haveAnAccount} />
-                                    <TouchableOpacity>
+                                    <TouchableOpacity onPress={() => this.props.navigation.navigate('SignIn')}>
                                         <Heading text={Lang.EN.login} type='tertiary' style={styles.linkSignIn} />
                                     </TouchableOpacity>
                                 </View>

@@ -9,7 +9,9 @@ interface PasswordRecoveryCodeState {
     timer: number
 }
 
-interface PasswordRecoveryCodeProps {}
+interface PasswordRecoveryCodeProps {
+    navigation: any
+}
 
 class PasswordRecoveryCode extends Component<PasswordRecoveryCodeProps, PasswordRecoveryCodeState> {
     constructor(props: PasswordRecoveryCodeProps){
@@ -78,6 +80,7 @@ class PasswordRecoveryCode extends Component<PasswordRecoveryCodeProps, Password
                         codeInputHighlightStyle={styles.codeInputHighlightStyle}
                         onCodeFilled = {(code) => {
                             console.log(code);
+                            this.props.navigation.replace('NewPassword');
                         }}
                     />
 

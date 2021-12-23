@@ -5,7 +5,11 @@ import { Button, Gap, Heading, Input, Paragraph } from '../../components';
 import { initFormLogin, Lang, validationFormLogin } from '../../configs';
 import { Colors, GlobalStyle } from '../../styles';
 
-class Signin extends Component {
+interface SigninProps {
+    navigation: any
+}
+
+class Signin extends Component<SigninProps, {}> {
     render() {
         return (
             <ScrollView showsVerticalScrollIndicator={false}>
@@ -38,7 +42,7 @@ class Signin extends Component {
                                 />
                                 {errors.password && touched.password && <Paragraph style={styles.error} type='tertiary' text={errors.password} />}
 
-                                <TouchableOpacity style={styles.forgotPasswordWrapper}>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate('PasswordRecovery')} style={styles.forgotPasswordWrapper}>
                                     <Paragraph text={Lang.EN.forgotPassword} type='secondary' style={styles.forgotPassword} />
                                 </TouchableOpacity>
                                 <Button text={Lang.EN.login}  onPress={handleSubmit} />
@@ -47,7 +51,7 @@ class Signin extends Component {
                                 <Gap height={GlobalStyle.paddingPrimary} />
                                 <View style={styles.dontHaveAccountWrapper}>
                                     <Paragraph text={Lang.EN.dontHaveAccount} type='secondary' style={styles.dontHaveAccount} />
-                                    <TouchableOpacity>
+                                    <TouchableOpacity onPress={() => this.props.navigation.navigate('SignUp')}>
                                         <Heading text={Lang.EN.signup} type='tertiary' style={styles.linkSignUp} />
                                     </TouchableOpacity>
                                 </View>
