@@ -9,7 +9,9 @@ interface VerificationCodeState {
     timer: number
 }
 
-interface VerificationCodeProps {}
+interface VerificationCodeProps {
+    navigation: any
+}
 
 class VerificationCode extends Component<VerificationCodeProps, VerificationCodeState> {
     constructor(props: VerificationCodeProps){
@@ -78,6 +80,7 @@ class VerificationCode extends Component<VerificationCodeProps, VerificationCode
                         codeInputHighlightStyle={styles.codeInputHighlightStyle}
                         onCodeFilled = {(code) => {
                             console.log(code);
+                            this.props.navigation.replace('HomeStack', { screen: 'Home' });
                         }}
                     />
 

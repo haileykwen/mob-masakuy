@@ -28,7 +28,7 @@ const RootStackScreen = () => {
     return (
         <RootStack.Navigator
             screenOptions={{ headerShown: false }}
-            initialRouteName="HomeStack"
+            initialRouteName="AuthStack"
         >
             <RootStack.Screen name="AuthStack" component={AuthStackScreen} />
             <RootStack.Screen name="HomeStack" component={HomeStackScreen} />

@@ -20,7 +20,10 @@ class Signin extends Component<SigninProps, {}> {
                     <Formik
                         initialValues={initFormLogin}
                         validationSchema={validationFormLogin}
-                        onSubmit={values => console.log(values)}
+                        onSubmit={values => {
+                            console.log(values);
+                            this.props.navigation.replace('HomeStack', { screen: 'Home' });
+                        }}
                     >
                         {({ handleChange, values, handleSubmit, errors, touched }) => (
                             <View>
