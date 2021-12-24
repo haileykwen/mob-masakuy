@@ -7,7 +7,8 @@ const Colors = {
 
     white: '#FFFFFF',
     outline: '#D0DBEA',
-    error: '#FF9494'
+    error: '#FF9494',
+    form: '#F4F5F7'
 }
 
 export default Colors;

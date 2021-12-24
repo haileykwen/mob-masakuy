@@ -32,7 +32,12 @@ const Lang = {
         sendOtp: "Kirim OTP",
         resetYourPassword: "Reset kata sandi",
         enterYourPassword: "Masukkan kata sandi",
-        reset: "Reset"
+        reset: "Reset",
+        search: "Cari",
+        category: "Kategory",
+        all: "Semua",
+        food: "Makanan",
+        drink: "Minuman"
     },
     EN: {
         startCooking: "Start Cooking",
@@ -67,7 +72,12 @@ const Lang = {
         sendOtp: "Send OTP",
         resetYourPassword: "Reset your password",
         enterYourPassword: "Please enter your password",
-        reset: "Reset"
+        reset: "Reset",
+        search: "Search",
+        category: "Category",
+        all: "All",
+        food: "Food",
+        drink: "Drink"
     }
 }
 
