@@ -12,7 +12,7 @@ interface SigninProps {
 class Signin extends Component<SigninProps, {}> {
     render() {
         return (
-            <ScrollView showsVerticalScrollIndicator={false}>
+            <ScrollView style={GlobalStyle.scrollView} showsVerticalScrollIndicator={false}>
                 <View style={styles.container}>
                     <Heading type='primary' style={styles.heading} text={Lang.EN.wellcomeBack} />
                     <Paragraph text={Lang.EN.enterAccount} type='secondary' style={styles.paragraph} />

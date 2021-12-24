@@ -67,7 +67,7 @@ class PasswordRecoveryCode extends Component<PasswordRecoveryCodeProps, Password
 
     render() {
         return (
-            <ScrollView>
+            <ScrollView style={GlobalStyle.scrollView} showsVerticalScrollIndicator={false}>
                 <View style={styles.container}>
                     <Heading type='primary' style={styles.heading} text={Lang.EN.checkYourEmail} />
                     <Paragraph text={Lang.EN.weSendOTP} type='secondary' style={styles.paragraph} />

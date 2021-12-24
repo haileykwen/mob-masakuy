@@ -65,7 +65,7 @@ class VerificationCode extends Component<VerificationCodeProps, VerificationCode
 
     render() {
         return (
-            <ScrollView>
+            <ScrollView style={GlobalStyle.scrollView} showsVerticalScrollIndicator={false}>
                 <View style={styles.container}>
                     <Heading type='primary' style={styles.heading} text={Lang.EN.checkYourEmail} />
                     <Paragraph text={Lang.EN.weSendOTP} type='secondary' style={styles.paragraph} />

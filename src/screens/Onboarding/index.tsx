@@ -11,7 +11,7 @@ interface OnboardingProps {
 class Onboarding extends Component<OnboardingProps, {}> {
     render() {
         return (
-            <ScrollView showsVerticalScrollIndicator={false}>
+            <ScrollView style={GlobalStyle.scrollView} showsVerticalScrollIndicator={false}>
                 <View style={styles.container}>
                     <Image style={styles.image} source={ImgOnboarding} />
                     <View style={styles.wrapper}>

@@ -1,5 +1,6 @@
 import { StatusBar } from "react-native";
 import { Dimensions } from "react-native";
+import { Colors } from ".";
 
 const GlobalStyle = {
     paddingPrimary: 24,
@@ -36,7 +37,11 @@ const GlobalStyle = {
     fontPrimarySemiBold: 'Inter-SemiBold',
     fontPrimaryBold: 'Inter-Bold',
     fontPrimaryExtraBold: 'Inter-ExtraBold',
-    fontPrimaryBlack: 'Inter-Black'
+    fontPrimaryBlack: 'Inter-Black',
+
+    scrollView: {
+        backgroundColor: Colors.white
+    }
 }
 
 export default GlobalStyle;

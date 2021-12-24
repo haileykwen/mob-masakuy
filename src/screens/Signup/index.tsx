@@ -15,7 +15,7 @@ interface SignupProps {
 class Signup extends Component<SignupProps, {}> {
     render() {
         return (
-            <ScrollView showsVerticalScrollIndicator={false}>
+            <ScrollView style={GlobalStyle.scrollView} showsVerticalScrollIndicator={false}>
                 <View style={styles.container}>
                     <Heading type='primary' style={styles.heading} text={Lang.EN.wellcome} />
                     <Paragraph text={Lang.EN.enterAccount} type='secondary' style={styles.paragraph} />

@@ -11,7 +11,7 @@ import { Colors, GlobalStyle } from '../../styles';
 class NewPassword extends Component {
     render() {
         return (
-            <ScrollView showsVerticalScrollIndicator={false}>
+            <ScrollView style={GlobalStyle.scrollView} showsVerticalScrollIndicator={false}>
                 <View style={styles.container}>
                     <Heading type='primary' style={styles.heading} text={Lang.EN.resetYourPassword} />
                     <Paragraph text={Lang.EN.enterYourPassword} type='secondary' style={styles.paragraph} />
