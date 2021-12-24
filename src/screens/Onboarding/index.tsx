@@ -11,9 +11,9 @@ interface OnboardingProps {
 class Onboarding extends Component<OnboardingProps, {}> {
     render() {
         return (
-            <ScrollView style={GlobalStyle.scrollView} showsVerticalScrollIndicator={false}>
+            <ScrollView contentContainerStyle={{flexGrow: 1}} style={GlobalStyle.scrollView} showsVerticalScrollIndicator={false}>
                 <View style={styles.container}>
-                    <Image style={styles.image} source={ImgOnboarding} />
+                    <Image resizeMode='cover' style={styles.image} source={ImgOnboarding} />
                     <View style={styles.wrapper}>
                         <Heading type='primary' text={Lang.EN.startCooking} style={styles.heading} />
                         <Paragraph type='primary' text={Lang.EN.joinCommunity} style={styles.paragraph} />
@@ -29,12 +29,13 @@ export default Onboarding;
 
 const styles = StyleSheet.create({
     container: {
+        minHeight: GlobalStyle.fullHeight - GlobalStyle.statusBarHeight,
         alignItems: 'center',
-        backgroundColor: Colors.white,
-        paddingTop: GlobalStyle.paddingTertiary
+        backgroundColor: Colors.white
     },
     image: {
-        width: GlobalStyle.fullWidth
+        width: GlobalStyle.fullWidth,
+        height: GlobalStyle.fullHeight - GlobalStyle.statusBarHeight - 326
     },
     heading: {
         textAlign: 'center',
@@ -49,6 +50,8 @@ const styles = StyleSheet.create({
     wrapper: {
         width: GlobalStyle.fullWidth,
         padding: GlobalStyle.paddingPrimary,
-        alignItems: 'center'
+        alignItems: 'center',
+        marginBottom: 0,
+        marginTop: 'auto'
     }
 });
