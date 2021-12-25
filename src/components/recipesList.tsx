@@ -1,5 +1,6 @@
 import React from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
+import { Gap } from '.';
 import RecipeItem from './recipeItem';
 
 interface RecipeListProps {
@@ -8,7 +9,8 @@ interface RecipeListProps {
 
 const RecipeList = (props: RecipeListProps) => {
     return (
-        <ScrollView showsVerticalScrollIndicator={false}>
+        <ScrollView showsVerticalScrollIndicator={false} nestedScrollEnabled={true}>
+            <Gap height={12} />
             <View style={styles.list}>
                 {props.recipes && props.recipes.map((recipe: any, index: any) => (
                     <RecipeItem
@@ -17,6 +19,7 @@ const RecipeList = (props: RecipeListProps) => {
                     />
                 ))}
             </View>
+            <Gap height={12} />
         </ScrollView>
     )
 }

@@ -18,7 +18,7 @@ export default Following;
 
 const styles = StyleSheet.create({
     container: {
-        padding: 12,
+        paddingHorizontal: 12,
         backgroundColor: Colors.white
     }
 });

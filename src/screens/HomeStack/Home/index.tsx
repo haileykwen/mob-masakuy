@@ -1,6 +1,6 @@
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 import { ButtonSelect, Gap, Heading, SearchBar } from '../../../components';
 import { Lang } from '../../../configs';
 import { Colors, GlobalStyle } from '../../../styles';
@@ -49,37 +49,39 @@ class Home extends Component<HomeProps, HomeState> {
 
     render() {
         return (
-            <View style={styles.container}>
-                <View style={styles.wrapper}>
-                    <SearchBar placeholder={Lang.EN.search} />
-                    <Gap height={GlobalStyle.paddingPrimary} />
-                    <Heading type='secondary' text={Lang.EN.category} />
-                    <Gap height={GlobalStyle.paddingTertiary} />
-                    <View style={styles.buttonSelectWrapper}>
-                        <ButtonSelect 
-                            text={Lang.EN.all} 
-                            active={this.state.selectedCategory === 'all' ? true : false} 
-                            onPress={() => this.setState({ selectedCategory: 'all' })}
-                        />
-                        <Gap width={GlobalStyle.paddingTertiary} />
-                        <ButtonSelect 
-                            text={Lang.EN.food} 
-                            active={this.state.selectedCategory === 'food' ? true : false}
-                            onPress={() => this.setState({ selectedCategory: 'food' })} 
-                        />
-                        <Gap width={GlobalStyle.paddingTertiary} />
-                        <ButtonSelect 
-                            text={Lang.EN.drink} 
-                            active={this.state.selectedCategory === 'drink' ? true : false} 
-                            onPress={() => this.setState({ selectedCategory: 'drink' })}
-                        />
+            <ScrollView>
+                <View style={styles.container}>
+                    <View style={styles.wrapper}>
+                        <SearchBar placeholder={Lang.EN.search} />
+                        <Gap height={GlobalStyle.paddingPrimary} />
+                        <Heading type='secondary' text={Lang.EN.category} />
+                        <Gap height={GlobalStyle.paddingTertiary} />
+                        <View style={styles.buttonSelectWrapper}>
+                            <ButtonSelect 
+                                text={Lang.EN.all} 
+                                active={this.state.selectedCategory === 'all' ? true : false} 
+                                onPress={() => this.setState({ selectedCategory: 'all' })}
+                            />
+                            <Gap width={GlobalStyle.paddingTertiary} />
+                            <ButtonSelect 
+                                text={Lang.EN.food} 
+                                active={this.state.selectedCategory === 'food' ? true : false}
+                                onPress={() => this.setState({ selectedCategory: 'food' })} 
+                            />
+                            <Gap width={GlobalStyle.paddingTertiary} />
+                            <ButtonSelect 
+                                text={Lang.EN.drink} 
+                                active={this.state.selectedCategory === 'drink' ? true : false} 
+                                onPress={() => this.setState({ selectedCategory: 'drink' })}
+                            />
+                        </View>
                     </View>
+
+                    <Gap width={'100%'} height={8} style={{backgroundColor: Colors.form}} />
+
+                    <HomeTab />
                 </View>
-
-                <Gap width={'100%'} height={8} style={{backgroundColor: Colors.form}} />
-
-                <HomeTab />
-            </View>
+            </ScrollView>
         );
     }
 }
@@ -88,9 +90,8 @@ export default Home;
 
 const styles = StyleSheet.create({
     container: {
-        minHeight: GlobalStyle.fullHeight - GlobalStyle.statusBarHeight,
-        backgroundColor: Colors.white,
-        paddingVertical: GlobalStyle.paddingSecondary
+        minHeight: GlobalStyle.fullHeight - GlobalStyle.statusBarHeight + 215,
+        backgroundColor: Colors.white
     },
     wrapper: {
         paddingHorizontal: GlobalStyle.paddingPrimary,
