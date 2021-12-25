@@ -49,7 +49,7 @@ class Home extends Component<HomeProps, HomeState> {
 
     render() {
         return (
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={styles.container}>
                     <View style={styles.wrapper}>
                         <SearchBar placeholder={Lang.EN.search} />
@@ -90,7 +90,7 @@ export default Home;
 
 const styles = StyleSheet.create({
     container: {
-        minHeight: GlobalStyle.fullHeight - GlobalStyle.statusBarHeight + 215,
+        minHeight: GlobalStyle.fullHeight - GlobalStyle.statusBarHeight + ((GlobalStyle.fullHeight - GlobalStyle.statusBarHeight) / 3.067109634551495),
         backgroundColor: Colors.white
     },
     wrapper: {

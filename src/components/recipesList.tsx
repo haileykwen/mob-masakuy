@@ -1,6 +1,7 @@
 import React from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { Gap } from '.';
+import { GlobalStyle } from '../styles';
 import RecipeItem from './recipeItem';
 
 interface RecipeListProps {
@@ -29,6 +30,7 @@ export default RecipeList;
 const styles = StyleSheet.create({
     list: {
         flexDirection: 'row',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+        height: GlobalStyle.fullHeight - GlobalStyle.statusBarHeight - 63.7
     }
 });
