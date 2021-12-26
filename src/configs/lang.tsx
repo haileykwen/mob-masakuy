@@ -37,7 +37,8 @@ const Lang = {
         category: "Kategory",
         all: "Semua",
         food: "Makanan",
-        drink: "Minuman"
+        drink: "Minuman",
+        searchSuggestions: "Rekomendasi Pencarian"
     },
     EN: {
         startCooking: "Start Cooking",
@@ -77,7 +78,8 @@ const Lang = {
         category: "Category",
         all: "All",
         food: "Food",
-        drink: "Drink"
+        drink: "Drink",
+        searchSuggestions: "Search Sugeestions"
     }
 }
 

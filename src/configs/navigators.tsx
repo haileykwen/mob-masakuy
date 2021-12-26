@@ -1,7 +1,7 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
-import { Home, NewPassword, Onboarding, PasswordRecovery, PasswordRecoveryCode, Signin, Signup, VerificationCode } from "../screens";
+import { Home, NewPassword, Onboarding, PasswordRecovery, PasswordRecoveryCode, Search, Signin, Signup, VerificationCode } from "../screens";
 
 const AuthStack = createNativeStackNavigator();
 const AuthStackScreen = () => (
@@ -20,6 +20,7 @@ const HomeStack = createNativeStackNavigator();
 const HomeStackScreen = () => (
     <HomeStack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
         <HomeStack.Screen name="Home" component={Home} />
+        <HomeStack.Screen name="Search" component={Search} />
     </HomeStack.Navigator>
 );
 

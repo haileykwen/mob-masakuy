@@ -11,6 +11,11 @@ import IcSearchActive from './search_active.png';
 import IcSearchClose from './close.png';
 import IcLoveActive from './love_active.png';
 import IcLoveInactive from './love_inactive.png';
+import IcSearchInactive from './search_inactive.png';
+import IcArrowBack from './arrow_back.png';
+import IcFilter from './filter.png';
+import IcArrowUpward from './arrow_upward.png';
+import IcHistory from './history.png';
 
 import DummyUser1 from './user1.png';
 import DummyUser2 from './user2.png';
@@ -35,6 +40,11 @@ export {
     IcSearchClose,
     IcLoveActive,
     IcLoveInactive,
+    IcSearchInactive,
+    IcArrowBack,
+    IcFilter,
+    IcArrowUpward,
+    IcHistory,
 
     DummyUser1,
     DummyUser2,

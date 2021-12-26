@@ -1,26 +1,38 @@
 import React from 'react';
 import { Image, StyleSheet, TextInput, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native';
-import { IcSearchActive, IcSearchClose } from '../assets/images';
+import { IcSearchActive, IcSearchClose, IcSearchInactive } from '../assets/images';
 import { Colors, GlobalStyle } from '../styles';
 
 interface SearchBarProps {
     type?: string,
     onSearchBarPress?: any,
-    placeholder: string
+    placeholder: string,
+    value?: string,
+    onReset?: any,
+    onChangetext?: any
 }
 
-const SearchBar = ({type, onSearchBarPress, placeholder}: SearchBarProps) => {
+const SearchBar = ({type, onSearchBarPress, placeholder, value, onReset, onChangetext}: SearchBarProps) => {
+    const [focus, setFocus] = React.useState(false);
+
     return (
         <TouchableWithoutFeedback onPress={onSearchBarPress && onSearchBarPress}>
             <View style={styles.container}>
-                <Image style={styles.icon} source={IcSearchActive} />
+                <Image 
+                    style={styles.icon}  
+                    source={type === 'functional' ? focus ? IcSearchActive : IcSearchInactive : IcSearchInactive} 
+                />
                 <TextInput 
                     placeholder={placeholder}
                     style={styles.input}
                     editable={type === 'functional' && true}
+                    onFocus={() => setFocus(true)}
+                    onBlur={() => setFocus(false)}
+                    value={value && value}
+                    onChangeText={onChangetext && onChangetext}
                 />
                 {type === 'functional' &&
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={onReset && onReset}>
                         <Image style={styles.icon} source={IcSearchClose} />
                     </TouchableOpacity>
                 }
@@ -38,7 +50,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: GlobalStyle.paddingPrimary,
         borderRadius: GlobalStyle.radiusPrimary,
         alignItems: 'center',
-        backgroundColor: Colors.form
+        backgroundColor: Colors.form,
+        flex: 1
     },
     icon: {
         width: 24,

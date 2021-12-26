@@ -37,7 +37,9 @@ interface HomeState {
     selectedCategory: string
 }
 
-interface HomeProps {}
+interface HomeProps {
+    navigation: any
+}
 
 class Home extends Component<HomeProps, HomeState> {
     constructor(props: HomeProps){
@@ -52,7 +54,10 @@ class Home extends Component<HomeProps, HomeState> {
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={styles.container}>
                     <View style={styles.wrapper}>
-                        <SearchBar placeholder={Lang.EN.search} />
+                        <SearchBar 
+                            placeholder={Lang.EN.search}
+                            onSearchBarPress={() => this.props.navigation.navigate('Search')} 
+                        />
                         <Gap height={GlobalStyle.paddingPrimary} />
                         <Heading type='secondary' text={Lang.EN.category} />
                         <Gap height={GlobalStyle.paddingTertiary} />
