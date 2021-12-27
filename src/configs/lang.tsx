@@ -38,7 +38,12 @@ const Lang = {
         all: "Semua",
         food: "Makanan",
         drink: "Minuman",
-        searchSuggestions: "Rekomendasi Pencarian"
+        searchSuggestions: "Rekomendasi Pencarian",
+        addFilter: "Tambahkan filter",
+        cookingDuration: "Lama Memasak",
+        inMinutes: "dalam menit",
+        cancel: "Kembali",
+        done: "Selesai"
     },
     EN: {
         startCooking: "Start Cooking",
@@ -79,7 +84,12 @@ const Lang = {
         all: "All",
         food: "Food",
         drink: "Drink",
-        searchSuggestions: "Search Sugeestions"
+        searchSuggestions: "Search Sugeestions",
+        addFilter: "Add a filter",
+        cookingDuration: "Cooking Duration",
+        inMinutes: "in minutes",
+        cancel: "Cancel",
+        done: "Done"
     }
 }
 

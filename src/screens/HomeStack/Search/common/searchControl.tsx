@@ -9,10 +9,11 @@ interface SearchControlProps {
     value: string,
     onBack: any,
     onReset: any,
-    onChangetext: any
+    onChangetext: any,
+    onPressFilter: any
 }
 
-const SearchControl = ({value, onBack, onReset,onChangetext}: SearchControlProps) => {
+const SearchControl = ({value, onBack, onReset, onChangetext, onPressFilter}: SearchControlProps) => {
     return (
         <View style={styles.searchControl}>
             <TouchableOpacity onPress={onBack}>
@@ -27,7 +28,7 @@ const SearchControl = ({value, onBack, onReset,onChangetext}: SearchControlProps
                 onChangetext={onChangetext}
             />
             <Gap width={24} />
-            <TouchableOpacity>
+            <TouchableOpacity onPress={onPressFilter}>
                 <Image source={IcFilter} style={styles.icon} />
             </TouchableOpacity>
         </View>
