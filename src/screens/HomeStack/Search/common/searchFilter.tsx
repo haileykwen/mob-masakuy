@@ -1,7 +1,7 @@
-import Slider from '@react-native-community/slider';
 import React from 'react';
 import { Modal, StyleSheet, Text, View } from 'react-native';
 import { Button, ButtonSelect, Gap, Heading } from '../../../../components';
+import SliderTimer from '../../../../components/slider';
 import { Lang } from '../../../../configs';
 import { Colors, GlobalStyle } from '../../../../styles';
 
@@ -47,22 +47,10 @@ const SearchFilter = (props: SearchFilterProps) => {
                         />
                     </View>
 
-                    <View style={styles.headingCookingDurationWrapper}>
-                        <Heading type='secondary' text={Lang.EN.cookingDuration} />
-                        <Heading type='secondary' text={`(${Lang.EN.inMinutes})`} style={styles.headingCookingDurationInMinutes} />
-                    </View>
-                    <View style={styles.durationWrapper}>
-                        <Heading text='<10' style={{color: Colors.textSecondary}} />
-                        <Heading text={props.duration} style={{color: Colors.primary}} />
-                        <Heading text='>60' style={{color: Colors.textSecondary}} />
-                    </View>
-                    <Slider
-                        style={{width: '100%'}}
-                        minimumValue={9}
-                        maximumValue={61}
-                        thumbTintColor={Colors.primary}
-                        minimumTrackTintColor={Colors.primary}
-                        onValueChange={(e) => props.onChangeDuration(e)}
+                    <SliderTimer
+                        onChangeDuration={(e: any) => props.onChangeDuration(e)}
+                        duration={props.duration}
+                        label={Lang.EN.cookingDuration}
                     />
 
                     <View style={styles.buttonWrapper}>
@@ -120,20 +108,20 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         marginBottom: 32
     },
-    headingCookingDurationWrapper: {
-        flexDirection: 'row',
-        marginBottom: 16
-    },
-    headingCookingDurationInMinutes: {
-        color: Colors.textSecondary,
-        fontWeight: '300',
-        marginLeft: 5
-    },
-    durationWrapper: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        marginBottom: 8
-    },
+    // headingCookingDurationWrapper: {
+    //     flexDirection: 'row',
+    //     marginBottom: 16
+    // },
+    // headingCookingDurationInMinutes: {
+    //     color: Colors.textSecondary,
+    //     fontWeight: '300',
+    //     marginLeft: 5
+    // },
+    // durationWrapper: {
+    //     flexDirection: 'row',
+    //     justifyContent: 'space-between',
+    //     marginBottom: 8
+    // },
     buttonWrapper: {
         flexDirection: 'row',
         marginBottom: 0,

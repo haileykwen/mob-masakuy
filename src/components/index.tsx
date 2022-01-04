@@ -6,6 +6,7 @@ import Input from "./input";
 import SearchBar from "./searchbar";
 import ButtonSelect from "./buttonSelect";
 import RecipeList from "./recipesList";
+import SliderTimer from "./slider";
 
 export {
     Button,
@@ -15,5 +16,6 @@ export {
     Input,
     SearchBar,
     ButtonSelect,
-    RecipeList
+    RecipeList,
+    SliderTimer
 }

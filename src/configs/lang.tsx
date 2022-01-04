@@ -43,7 +43,18 @@ const Lang = {
         cookingDuration: "Lama Memasak",
         inMinutes: "dalam menit",
         cancel: "Kembali",
-        done: "Selesai"
+        done: "Selesai",
+        addCoverPhoto: "Tambahkan foto",
+        upTo12Mb: "Ukuran sampai 12mb",
+        foodName: "Nama Makanan",
+        enterFoodName: "Masukkan nama makanan",
+        description: "Deskripsi",
+        tellADescription: "Sedikit cerita tentang makanan anda",
+        ingredients: "Bahan-bahan",
+        enterIngredient: "Masukkan bahan",
+        steps: "Langkah-langkah",
+        describeStep: "Apa yang harus dilakukan",
+        create: "Buat"
     },
     EN: {
         startCooking: "Start Cooking",
@@ -89,7 +100,18 @@ const Lang = {
         cookingDuration: "Cooking Duration",
         inMinutes: "in minutes",
         cancel: "Cancel",
-        done: "Done"
+        done: "Done",
+        addCoverPhoto: "Add cover photo",
+        upTo12Mb: "Up to 12mb",
+        foodName: "Food Name",
+        enterFoodName: "Enter food name",
+        description: "Description",
+        tellADescription: "Tell a little about your food",
+        ingredients: "Ingredients",
+        enterIngredient: "Enter ingredient",
+        steps: "Steps",
+        describeStep: "Tell what to do",
+        create: "Create"
     }
 }
 
