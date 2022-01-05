@@ -17,3 +17,5 @@ export {
 }
 export * from './HomeStack';
 export * from './CreateStack';
+export * from './NotificationStack';
+export * from './ProfileStack';

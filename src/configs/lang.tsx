@@ -54,7 +54,12 @@ const Lang = {
         enterIngredient: "Masukkan bahan",
         steps: "Langkah-langkah",
         describeStep: "Apa yang harus dilakukan",
-        create: "Buat"
+        create: "Buat",
+        recipes: "Resep",
+        following: "Mengikuti",
+        followers: "Pengikut",
+        liked: "Menyukai",
+        follow: "Ikuti"
     },
     EN: {
         startCooking: "Start Cooking",
@@ -111,7 +116,12 @@ const Lang = {
         enterIngredient: "Enter ingredient",
         steps: "Steps",
         describeStep: "Tell what to do",
-        create: "Create"
+        create: "Create",
+        recipes: "Recipes",
+        following: "Following",
+        followers: "Followers",
+        liked: "Liked",
+        follow: "Follow"
     }
 }
 

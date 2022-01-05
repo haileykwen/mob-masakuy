@@ -1,8 +1,7 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
-import { Create, Home, NewPassword, Onboarding, PasswordRecovery, PasswordRecoveryCode, Search, Signin, Signup, VerificationCode } from "../screens";
-import { Notification } from "../screens/NotificationStack";
+import { Create, Home, NewPassword, Notification, Onboarding, PasswordRecovery, PasswordRecoveryCode, Profile, Search, Signin, Signup, VerificationCode } from "../screens";
 
 const AuthStack = createNativeStackNavigator();
 const AuthStackScreen = () => (
@@ -39,17 +38,25 @@ const NotificationStackScreen = () => (
     </NotificationStack.Navigator>
 );
 
+const ProfileStack = createNativeStackNavigator();
+const ProfileStackScreen = () => (
+    <ProfileStack.Navigator initialRouteName="Profile" screenOptions={{ headerShown: false }}>
+        <ProfileStack.Screen name="Profile" component={Profile} />
+    </ProfileStack.Navigator>
+);
+
 const RootStack = createNativeStackNavigator();
 const RootStackScreen = () => {
     return (
         <RootStack.Navigator
             screenOptions={{ headerShown: false }}
-            initialRouteName="NotificationStack"
+            initialRouteName="ProfileStack"
         >
             <RootStack.Screen name="AuthStack" component={AuthStackScreen} />
             <RootStack.Screen name="HomeStack" component={HomeStackScreen} />
             <RootStack.Screen name="CreateStack" component={CreateStackScreen} />
             <RootStack.Screen name="NotificationStack" component={NotificationStackScreen} />
+            <RootStack.Screen name="ProfileStack" component={ProfileStackScreen} />
         </RootStack.Navigator>
     );
 }

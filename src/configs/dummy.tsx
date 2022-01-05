@@ -68,3 +68,11 @@ export const DummyRecipes = [
         time: '60 mins'
     },
 ];
+
+export const DummyMyProfile = {
+    name: "Sam Witwicky",
+    recipes: "10",
+    following: "1",
+    followers: "321",
+    pic: DummyUser1
+}
