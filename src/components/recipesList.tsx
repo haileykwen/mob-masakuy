@@ -31,7 +31,8 @@ export default RecipeList;
 
 const styles = StyleSheet.create({
     container: {
-        minHeight: GlobalStyle.fullHeight - GlobalStyle.statusBarHeight - 63.7
+        minHeight: GlobalStyle.fullHeight - GlobalStyle.statusBarHeight - 63.7,
+        paddingBottom: 48.8
     },
     list: {
         flexDirection: 'row',

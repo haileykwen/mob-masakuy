@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
-import { Button, Gap, Heading, Paragraph } from '../../components';
-import { Lang } from '../../configs';
-import { Colors, GlobalStyle } from '../../styles';
+import { Button, Gap, Heading, Paragraph } from '../../../components';
+import { Lang } from '../../../configs';
+import { Colors, GlobalStyle } from '../../../styles';
 import OTPInputView from '@twotalltotems/react-native-otp-input';
 
 interface VerificationCodeState {

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
-import { Button, Gap, Heading, Input, Paragraph } from '../../components';
-import { Lang } from '../../configs';
-import { Colors, GlobalStyle } from '../../styles';
+import { Button, Gap, Heading, Input, Paragraph } from '../../../components';
+import { Lang } from '../../../configs';
+import { Colors, GlobalStyle } from '../../../styles';
 import { Formik } from 'formik';
-import { initRecoverPassword } from '../../configs/initialValues';
-import { validationRecoverPassword } from '../../configs/validations';
+import { initRecoverPassword } from '../../../configs/initialValues';
+import { validationRecoverPassword } from '../../../configs/validations';
 
 interface PasswordRecoveryProps {
     navigation: any

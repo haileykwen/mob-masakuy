@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
         height: 24
     },
     row: {
-        flexDirection: 'row'
+        flexDirection: 'row',
+        flex: 1
     }
 });

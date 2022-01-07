@@ -1,12 +1,12 @@
 import { Formik } from 'formik';
 import React, { Component } from 'react';
 import { Image, ScrollView, StyleSheet, View } from 'react-native';
-import { IcCheckCircleActive, IcCheckCircleInactive } from '../../assets/images';
-import { Button, Gap, Heading, Input, Paragraph } from '../../components';
-import { Lang } from '../../configs';
-import { initNewPassword } from '../../configs/initialValues';
-import { validationNewPassword } from '../../configs/validations';
-import { Colors, GlobalStyle } from '../../styles';
+import { IcCheckCircleActive, IcCheckCircleInactive } from '../../../assets/images';
+import { Button, Gap, Heading, Input, Paragraph } from '../../../components';
+import { Lang } from '../../../configs';
+import { initNewPassword } from '../../../configs/initialValues';
+import { validationNewPassword } from '../../../configs/validations';
+import { Colors, GlobalStyle } from '../../../styles';
 
 class NewPassword extends Component {
     render() {

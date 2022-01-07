@@ -84,8 +84,8 @@ export default Profile;
 const styles = (props: ProfileProps) => StyleSheet.create({
     container: {
         minHeight: props.route.user_id ? 
-            GlobalStyle.fullHeight - GlobalStyle.statusBarHeight + ((GlobalStyle.fullHeight - GlobalStyle.statusBarHeight) / 1.81953642384106)
-            : GlobalStyle.fullHeight - GlobalStyle.statusBarHeight + ((GlobalStyle.fullHeight - GlobalStyle.statusBarHeight) / 2.434108527131783),
+            GlobalStyle.fullHeight - 48.8 - GlobalStyle.statusBarHeight + ((GlobalStyle.fullHeight - GlobalStyle.statusBarHeight) / 1.81953642384106)
+            : GlobalStyle.fullHeight - 48.8 - GlobalStyle.statusBarHeight + ((GlobalStyle.fullHeight - GlobalStyle.statusBarHeight) / 2.434108527131783),
         backgroundColor: Colors.white
     },
     userInfo: {

@@ -20,6 +20,14 @@ import IcImagePicker from './image_picker.png';
 import IcDrag from './drag.png';
 import IcPlus from './plus.png';
 import IcLikes from './likes.png';
+import IcHomeInactive from './home_inactive.png';
+import IcRecipeInactive from './recipe_inactive.png';
+import IcNotificationInactive from './notification_inactive.png';
+import IcProfileInactive from './profile_inactive.png';
+import IcHomeActive from './home_active.png';
+import IcRecipeActive from './recipe_active.png';
+import IcNotificationActive from './notification_active.png';
+import IcProfileActive from './profile_active.png';
 
 import DummyUser1 from './user1.png';
 import DummyUser2 from './user2.png';
@@ -53,6 +61,14 @@ export {
     IcDrag,
     IcPlus,
     IcLikes,
+    IcHomeInactive,
+    IcRecipeInactive,
+    IcNotificationInactive,
+    IcProfileInactive,
+    IcHomeActive,
+    IcRecipeActive,
+    IcNotificationActive,
+    IcProfileActive,
 
     DummyUser1,
     DummyUser2,

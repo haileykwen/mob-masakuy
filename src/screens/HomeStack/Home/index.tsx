@@ -95,7 +95,7 @@ export default Home;
 
 const styles = StyleSheet.create({
     container: {
-        minHeight: GlobalStyle.fullHeight - GlobalStyle.statusBarHeight + ((GlobalStyle.fullHeight - GlobalStyle.statusBarHeight) / 3.067109634551495),
+        minHeight: GlobalStyle.fullHeight - 48.8 - GlobalStyle.statusBarHeight + ((GlobalStyle.fullHeight - GlobalStyle.statusBarHeight) / 3.067109634551495),
         backgroundColor: Colors.white
     },
     wrapper: {

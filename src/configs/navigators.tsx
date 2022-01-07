@@ -2,6 +2,10 @@ import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 import { Create, Home, NewPassword, Notification, Onboarding, PasswordRecovery, PasswordRecoveryCode, Profile, Search, Signin, Signup, VerificationCode, ViewRecipe } from "../screens";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { IcHomeActive, IcHomeInactive, IcNotificationActive, IcNotificationInactive, IcProfileActive, IcProfileInactive, IcRecipeActive, IcRecipeInactive } from "../assets/images";
+import { Image } from "react-native";
+import { Colors, GlobalStyle } from "../styles";
 
 const AuthStack = createNativeStackNavigator();
 const AuthStackScreen = () => (
@@ -26,7 +30,7 @@ const HomeStackScreen = () => (
 
 const RecipeStack = createNativeStackNavigator();
 const RecipeStackScreen = () => (
-    <RecipeStack.Navigator initialRouteName="View" screenOptions={{ headerShown: false }}>
+    <RecipeStack.Navigator initialRouteName="Createt" screenOptions={{ headerShown: false }}>
         <RecipeStack.Screen name="Create" component={Create} />
         <RecipeStack.Screen name="View" component={ViewRecipe} />
     </RecipeStack.Navigator>
@@ -46,18 +50,110 @@ const ProfileStackScreen = () => (
     </ProfileStack.Navigator>
 );
 
+const Tab = createBottomTabNavigator();
+const BottomTabs = () => (
+    <Tab.Navigator
+        screenOptions={{
+            tabBarStyle: {
+                shadowColor: "#000",
+                shadowOffset: {
+                    width: 0,
+                    height: 12,
+                },
+                shadowOpacity: 0.58,
+                shadowRadius: 16.00,
+
+                elevation: 24,
+            }
+        }}
+    >
+        <Tab.Screen
+            name="HomeTab"
+            component={HomeStackScreen}
+            options={{
+                tabBarLabel: 'Home',
+                tabBarLabelStyle: {fontFamily: GlobalStyle.fontPrimaryRegular, fontSize: 12},
+                tabBarActiveTintColor: Colors.primary,
+                tabBarInactiveTintColor: Colors.outline,
+                headerShown: false,
+                tabBarIcon: ({ size, focused, color }) => {
+                    return (
+                        <Image
+                            style={{ width: 24, height: 24 }}
+                            source={focused ? IcHomeActive : IcHomeInactive}
+                        />
+                    );
+                }
+            }}
+        />
+        <Tab.Screen
+            name="RecipeTab"
+            component={RecipeStackScreen}
+            options={{
+                tabBarLabel: 'Recipe',
+                tabBarLabelStyle: {fontFamily: GlobalStyle.fontPrimaryRegular, fontSize: 12},
+                tabBarActiveTintColor: Colors.primary,
+                tabBarInactiveTintColor: Colors.outline,
+                headerShown: false,
+                tabBarIcon: ({ size, focused, color }) => {
+                    return (
+                        <Image
+                            style={{ width: 24, height: 24 }}
+                            source={focused ? IcRecipeActive : IcRecipeInactive}
+                        />
+                    );
+                }
+            }}
+        />
+        <Tab.Screen
+            name="NotificationTab"
+            component={NotificationStackScreen}
+            options={{
+                tabBarLabel: 'Notification',
+                tabBarLabelStyle: {fontFamily: GlobalStyle.fontPrimaryRegular, fontSize: 12},
+                tabBarActiveTintColor: Colors.primary,
+                tabBarInactiveTintColor: Colors.outline,
+                headerShown: false,
+                tabBarIcon: ({ size, focused, color }) => {
+                    return (
+                        <Image
+                            style={{ width: 24, height: 24 }}
+                            source={focused ? IcNotificationActive : IcNotificationInactive}
+                        />
+                    );
+                }
+            }}
+        />
+        <Tab.Screen
+            name="ProfileTab"
+            component={ProfileStackScreen}
+            options={{
+                tabBarLabel: 'Profile',
+                tabBarLabelStyle: {fontFamily: GlobalStyle.fontPrimaryRegular, fontSize: 12},
+                tabBarActiveTintColor: Colors.primary,
+                tabBarInactiveTintColor: Colors.outline,
+                headerShown: false,
+                tabBarIcon: ({ size, focused, color }) => {
+                    return (
+                        <Image
+                            style={{ width: 24, height: 24 }}
+                            source={focused ? IcProfileActive : IcProfileInactive}
+                        />
+                    );
+                }
+            }}
+        />
+    </Tab.Navigator>
+)
+
 const RootStack = createNativeStackNavigator();
 const RootStackScreen = () => {
     return (
         <RootStack.Navigator
             screenOptions={{ headerShown: false }}
-            initialRouteName="RecipeStack"
+            initialRouteName="BottomTabs"
         >
-            <RootStack.Screen name="AuthStack" component={AuthStackScreen} />
-            <RootStack.Screen name="HomeStack" component={HomeStackScreen} />
-            <RootStack.Screen name="RecipeStack" component={RecipeStackScreen} />
-            <RootStack.Screen name="NotificationStack" component={NotificationStackScreen} />
-            <RootStack.Screen name="ProfileStack" component={ProfileStackScreen} />
+            <RootStack.Screen name="BottomTabs" component={BottomTabs} />
         </RootStack.Navigator>
     );
 }

@@ -1,9 +1,9 @@
 import { Formik } from 'formik';
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
-import { Button, Gap, Heading, Input, Paragraph } from '../../components';
-import { initFormLogin, Lang, validationFormLogin } from '../../configs';
-import { Colors, GlobalStyle } from '../../styles';
+import { Button, Gap, Heading, Input, Paragraph } from '../../../components';
+import { initFormLogin, Lang, validationFormLogin } from '../../../configs';
+import { Colors, GlobalStyle } from '../../../styles';
 
 interface SigninProps {
     navigation: any
