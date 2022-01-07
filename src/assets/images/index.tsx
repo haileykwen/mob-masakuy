@@ -7,6 +7,36 @@ import IcEyeInactive from './eye_inactive.png';
 import IcGoogle from './google.png';
 import IcCheckCircleActive from './check_circle_active.png';
 import IcCheckCircleInactive from './check_circle_inactive.png';
+import IcSearchActive from './search_active.png';
+import IcSearchClose from './close.png';
+import IcLoveActive from './love_active.png';
+import IcLoveInactive from './love_inactive.png';
+import IcSearchInactive from './search_inactive.png';
+import IcArrowBack from './arrow_back.png';
+import IcFilter from './filter.png';
+import IcArrowUpward from './arrow_upward.png';
+import IcHistory from './history.png';
+import IcImagePicker from './image_picker.png';
+import IcDrag from './drag.png';
+import IcPlus from './plus.png';
+import IcLikes from './likes.png';
+import IcHomeInactive from './home_inactive.png';
+import IcRecipeInactive from './recipe_inactive.png';
+import IcNotificationInactive from './notification_inactive.png';
+import IcProfileInactive from './profile_inactive.png';
+import IcHomeActive from './home_active.png';
+import IcRecipeActive from './recipe_active.png';
+import IcNotificationActive from './notification_active.png';
+import IcProfileActive from './profile_active.png';
+
+import DummyUser1 from './user1.png';
+import DummyUser2 from './user2.png';
+import DummyUser3 from './user3.png';
+import DummyUser4 from './user4.png';
+import DummyFood1 from './food1.png';
+import DummyFood2 from './food2.png';
+import DummyFood3 from './food3.png';
+import DummyFood4 from './food4.png';
 
 export {
     ImgOnboarding,
@@ -17,5 +47,35 @@ export {
     IcEyeInactive,
     IcGoogle,
     IcCheckCircleActive,
-    IcCheckCircleInactive
+    IcCheckCircleInactive,
+    IcSearchActive,
+    IcSearchClose,
+    IcLoveActive,
+    IcLoveInactive,
+    IcSearchInactive,
+    IcArrowBack,
+    IcFilter,
+    IcArrowUpward,
+    IcHistory,
+    IcImagePicker,
+    IcDrag,
+    IcPlus,
+    IcLikes,
+    IcHomeInactive,
+    IcRecipeInactive,
+    IcNotificationInactive,
+    IcProfileInactive,
+    IcHomeActive,
+    IcRecipeActive,
+    IcNotificationActive,
+    IcProfileActive,
+
+    DummyUser1,
+    DummyUser2,
+    DummyUser3,
+    DummyUser4,
+    DummyFood1,
+    DummyFood2,
+    DummyFood3,
+    DummyFood4
 }

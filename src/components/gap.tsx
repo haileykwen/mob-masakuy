@@ -2,13 +2,14 @@ import React from 'react';
 import { View } from 'react-native';
 
 interface GapProps {
-    height?: number,
-    width?: number
+    height?: any,
+    width?: any,
+    style?: any
 }
 
 const Gap = (props: GapProps) => {
     return (
-        <View style={{width: props.width, height: props.height}} />
+        <View style={{width: props.width, height: props.height, ...props.style}} />
     );
 }
 
