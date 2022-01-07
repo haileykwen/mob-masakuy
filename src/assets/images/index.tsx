@@ -19,6 +19,7 @@ import IcHistory from './history.png';
 import IcImagePicker from './image_picker.png';
 import IcDrag from './drag.png';
 import IcPlus from './plus.png';
+import IcLikes from './likes.png';
 
 import DummyUser1 from './user1.png';
 import DummyUser2 from './user2.png';
@@ -51,6 +52,7 @@ export {
     IcImagePicker,
     IcDrag,
     IcPlus,
+    IcLikes,
 
     DummyUser1,
     DummyUser2,

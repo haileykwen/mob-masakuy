@@ -1,7 +1,7 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
-import { Create, Home, NewPassword, Notification, Onboarding, PasswordRecovery, PasswordRecoveryCode, Profile, Search, Signin, Signup, VerificationCode } from "../screens";
+import { Create, Home, NewPassword, Notification, Onboarding, PasswordRecovery, PasswordRecoveryCode, Profile, Search, Signin, Signup, VerificationCode, ViewRecipe } from "../screens";
 
 const AuthStack = createNativeStackNavigator();
 const AuthStackScreen = () => (
@@ -24,11 +24,12 @@ const HomeStackScreen = () => (
     </HomeStack.Navigator>
 );
 
-const CreateStack = createNativeStackNavigator();
-const CreateStackScreen = () => (
-    <CreateStack.Navigator initialRouteName="Create" screenOptions={{ headerShown: false }}>
-        <CreateStack.Screen name="Create" component={Create} />
-    </CreateStack.Navigator>
+const RecipeStack = createNativeStackNavigator();
+const RecipeStackScreen = () => (
+    <RecipeStack.Navigator initialRouteName="View" screenOptions={{ headerShown: false }}>
+        <RecipeStack.Screen name="Create" component={Create} />
+        <RecipeStack.Screen name="View" component={ViewRecipe} />
+    </RecipeStack.Navigator>
 );
 
 const NotificationStack = createNativeStackNavigator();
@@ -50,11 +51,11 @@ const RootStackScreen = () => {
     return (
         <RootStack.Navigator
             screenOptions={{ headerShown: false }}
-            initialRouteName="ProfileStack"
+            initialRouteName="RecipeStack"
         >
             <RootStack.Screen name="AuthStack" component={AuthStackScreen} />
             <RootStack.Screen name="HomeStack" component={HomeStackScreen} />
-            <RootStack.Screen name="CreateStack" component={CreateStackScreen} />
+            <RootStack.Screen name="RecipeStack" component={RecipeStackScreen} />
             <RootStack.Screen name="NotificationStack" component={NotificationStackScreen} />
             <RootStack.Screen name="ProfileStack" component={ProfileStackScreen} />
         </RootStack.Navigator>

@@ -22,5 +22,7 @@ const styles = ({type}: ParagraphProps) => StyleSheet.create({
         fontSize: type === 'primary' ? GlobalStyle.P1 : type === 'secondary' ? GlobalStyle.P2 : GlobalStyle.P3,
         lineHeight: type === 'primary' ? GlobalStyle.LP1 : type === 'secondary' ? GlobalStyle.LP2 : GlobalStyle.LP3,
         color: Colors.textSecondary,
+        flex: 1,
+        textAlignVertical: 'center'
     }
 });
