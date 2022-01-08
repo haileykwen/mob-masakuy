@@ -1,14 +1,25 @@
+import { FormikProps } from 'formik';
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { RecipeList } from '../../../../components';
 import { DummyRecipes } from '../../../../configs';
 import { Colors } from '../../../../styles';
 
-class Following extends Component {
+interface FollowingProps {
+    navigation?: any
+}
+
+interface FollowingState {}
+
+class Following extends Component<FollowingProps, FollowingState> {
+    constructor(props: FollowingProps){
+        super(props);
+    }
+
     render() {
         return (
             <View style={styles.container}>
-                <RecipeList recipes={DummyRecipes} />
+                <RecipeList recipes={DummyRecipes} navigation={this.props.navigation} />
             </View>
         );
     }

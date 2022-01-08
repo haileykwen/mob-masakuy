@@ -8,7 +8,12 @@ import Explore from './common/explore';
 import Following from './common/following';
 
 const Tab = createMaterialTopTabNavigator();
-const HomeTab = () => {
+
+interface HomeTabProps {
+    navigation?: any
+}
+
+const HomeTab = (props: HomeTabProps) => {
     return(
         <Tab.Navigator
             screenOptions={{
@@ -27,8 +32,12 @@ const HomeTab = () => {
                 }
             }}
         >
-            <Tab.Screen name="Explore" component={Explore} />
-            <Tab.Screen name="Following" component={Following} />
+            <Tab.Screen name={Lang.EN.explore}>
+                {() => <Explore navigation={props.navigation} />}
+            </Tab.Screen>
+            <Tab.Screen name={Lang.EN.following}>
+                {() => <Following navigation={props.navigation} />}
+            </Tab.Screen>
         </Tab.Navigator>
     );
 }
@@ -84,7 +93,7 @@ class Home extends Component<HomeProps, HomeState> {
 
                     <Gap width={'100%'} height={8} style={{backgroundColor: Colors.form}} />
 
-                    <HomeTab />
+                    <HomeTab navigation={this.props.navigation} />
                 </View>
             </ScrollView>
         );

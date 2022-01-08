@@ -4,11 +4,21 @@ import { RecipeList } from '../../../../components';
 import { DummyRecipes } from '../../../../configs';
 import { Colors } from '../../../../styles';
 
-class Liked extends Component {
+
+interface LikedProps {
+    navigation?: any
+}
+
+interface LikedState {}
+class Liked extends Component<LikedProps, LikedState> {
+    constructor(props: LikedProps){
+        super(props);
+    }
+
     render() {
         return (
             <View style={styles.container}>
-                <RecipeList recipes={DummyRecipes} />
+                <RecipeList recipes={DummyRecipes} navigation={this.props.navigation} />
             </View>
         );
     }

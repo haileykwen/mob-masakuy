@@ -4,11 +4,21 @@ import { RecipeList } from '../../../../components';
 import { DummyRecipes } from '../../../../configs';
 import { Colors } from '../../../../styles';
 
-class Explore extends Component {
+interface ExploreProps {
+    navigation?: any
+}
+
+interface ExploreState {}
+
+class Explore extends Component<ExploreProps, ExploreState> {
+    constructor(props: ExploreProps){
+        super(props);
+    }
+
     render() {
         return (
             <View style={styles.container}>
-                <RecipeList recipes={DummyRecipes} />
+                <RecipeList recipes={DummyRecipes} navigation={this.props.navigation} />
             </View>
         );
     }

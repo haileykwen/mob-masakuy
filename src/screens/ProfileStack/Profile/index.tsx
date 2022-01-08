@@ -8,14 +8,13 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import Recipes from './common/recipes';
 import Liked from './common/liked';
 
-interface ProfileProps {
-    route?: any
+const Tab = createMaterialTopTabNavigator();
+
+interface ProfileTabProps {
+    navigation?: any
 }
 
-interface ProfileState {}
-
-const Tab = createMaterialTopTabNavigator();
-const ProfileTab = () => {
+const ProfileTab = (props: ProfileTabProps) => {
     return(
         <Tab.Navigator
             screenOptions={{
@@ -34,11 +33,22 @@ const ProfileTab = () => {
                 }
             }}
         >
-            <Tab.Screen name={Lang.EN.recipes} component={Recipes} />
-            <Tab.Screen name={Lang.EN.liked} component={Liked} />
+            <Tab.Screen name={Lang.EN.recipes}>
+                {() => <Recipes navigation={props.navigation} />}
+            </Tab.Screen>
+            <Tab.Screen name={Lang.EN.liked}>
+                {() => <Liked navigation={props.navigation} />}
+            </Tab.Screen>
         </Tab.Navigator>
     );
 }
+
+interface ProfileProps {
+    route?: any,
+    navigation?: any
+}
+
+interface ProfileState {}
 
 class Profile extends Component<ProfileProps, ProfileState> {
     constructor(props: ProfileProps){
@@ -67,12 +77,12 @@ class Profile extends Component<ProfileProps, ProfileState> {
                                 <Paragraph type='tertiary' text={Lang.EN.followers} />
                             </View>
                         </View>
-                        {this.props.route.user_id && <Button text={Lang.EN.follow} />}
+                        {this.props.route.params && this.props.route.params.user_id && <Button text={Lang.EN.follow} />}
                     </View>
 
                     <Gap height={8} width={'100%'} style={{backgroundColor: Colors.form}} />
 
-                    <ProfileTab />
+                    <ProfileTab navigation={this.props.navigation} />
                 </View>
             </ScrollView>
         );
@@ -83,8 +93,8 @@ export default Profile;
 
 const styles = (props: ProfileProps) => StyleSheet.create({
     container: {
-        minHeight: props.route.user_id ? 
-            GlobalStyle.fullHeight - 48.8 - GlobalStyle.statusBarHeight + ((GlobalStyle.fullHeight - GlobalStyle.statusBarHeight) / 1.81953642384106)
+        minHeight: props.route.params && props.route.params.user_id ? 
+            GlobalStyle.fullHeight - GlobalStyle.statusBarHeight + ((GlobalStyle.fullHeight - GlobalStyle.statusBarHeight) / 1.81953642384106)
             : GlobalStyle.fullHeight - 48.8 - GlobalStyle.statusBarHeight + ((GlobalStyle.fullHeight - GlobalStyle.statusBarHeight) / 2.434108527131783),
         backgroundColor: Colors.white
     },
@@ -105,7 +115,7 @@ const styles = (props: ProfileProps) => StyleSheet.create({
         alignItems: 'center',
         marginTop: GlobalStyle.paddingPrimary,
         width: '100%',
-        marginBottom: props.route.user_id ? 32 : 0
+        marginBottom: props.route.params && props.route.params.user_id ? 32 : 0
     },
     userPopularityItem: {
         flexDirection: 'column',

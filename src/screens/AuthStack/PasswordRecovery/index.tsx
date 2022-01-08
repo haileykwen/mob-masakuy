@@ -17,7 +17,9 @@ class PasswordRecovery extends Component<PasswordRecoveryProps, {}> {
             <ScrollView style={GlobalStyle.scrollView} showsVerticalScrollIndicator={false}>
                 <View style={styles.container}>
                     <Heading type='primary' style={styles.heading} text={Lang.EN.passwordRecovery} />
-                    <Paragraph text={Lang.EN.enterEmailForRecovery} type='secondary' style={styles.paragraph} />
+                    <View>
+                        <Paragraph text={Lang.EN.enterEmailForRecovery} type='secondary' style={styles.paragraph} />
+                    </View>
                     <Formik
                         initialValues={initRecoverPassword}
                         validationSchema={validationRecoverPassword}

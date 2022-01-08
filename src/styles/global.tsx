@@ -1,6 +1,6 @@
 import { StatusBar } from "react-native";
 import { Dimensions } from "react-native";
-import { Colors } from ".";
+import Colors from "./colors";
 
 const GlobalStyle = {
     paddingPrimary: 24,

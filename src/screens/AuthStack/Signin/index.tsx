@@ -15,14 +15,16 @@ class Signin extends Component<SigninProps, {}> {
             <ScrollView style={GlobalStyle.scrollView} showsVerticalScrollIndicator={false}>
                 <View style={styles.container}>
                     <Heading type='primary' style={styles.heading} text={Lang.EN.wellcomeBack} />
-                    <Paragraph text={Lang.EN.enterAccount} type='secondary' style={styles.paragraph} />
+                    <View>
+                        <Paragraph text={Lang.EN.enterAccount} type='secondary' style={styles.paragraph} />
+                    </View>
                     
                     <Formik
                         initialValues={initFormLogin}
                         validationSchema={validationFormLogin}
                         onSubmit={values => {
                             console.log(values);
-                            this.props.navigation.replace('HomeStack', { screen: 'Home' });
+                            this.props.navigation.replace('BottomTabs');
                         }}
                     >
                         {({ handleChange, values, handleSubmit, errors, touched }) => (
@@ -53,7 +55,9 @@ class Signin extends Component<SigninProps, {}> {
                                 <Button text='Google' type='google' />
                                 <Gap height={GlobalStyle.paddingPrimary} />
                                 <View style={styles.dontHaveAccountWrapper}>
-                                    <Paragraph text={Lang.EN.dontHaveAccount} type='secondary' style={styles.dontHaveAccount} />
+                                    <View>
+                                        <Paragraph text={Lang.EN.dontHaveAccount} type='secondary' style={styles.dontHaveAccount} />
+                                    </View>
                                     <TouchableOpacity onPress={() => this.props.navigation.navigate('SignUp')}>
                                         <Heading text={Lang.EN.signup} type='tertiary' style={styles.linkSignUp} />
                                     </TouchableOpacity>

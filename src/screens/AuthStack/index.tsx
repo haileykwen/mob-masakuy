@@ -4,6 +4,7 @@ import VerificationCode from "./VerificationCode";
 import PasswordRecovery from "./PasswordRecovery";
 import PasswordRecoveryCode from "./PasswordRecoveryCode";
 import NewPassword from "./NewPassword";
+import Onboarding from "./Onboarding";
 
 export {
     Signin,
@@ -11,5 +12,6 @@ export {
     VerificationCode,
     PasswordRecovery,
     PasswordRecoveryCode,
-    NewPassword
+    NewPassword,
+    Onboarding
 }

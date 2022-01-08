@@ -5,7 +5,8 @@ import { GlobalStyle } from '../styles';
 import RecipeItem from './recipeItem';
 
 interface RecipeListProps {
-    recipes: any
+    recipes: any,
+    navigation?: any
 }
 
 const RecipeList = (props: RecipeListProps) => {
@@ -15,10 +16,9 @@ const RecipeList = (props: RecipeListProps) => {
                 <Gap height={12} />
                 <View style={styles.list}>
                     {props.recipes && props.recipes.map((recipe: any, index: any) => (
-                        <RecipeItem
-                            recipeData={recipe}
-                            key={index}
-                        />
+                        <View key={index}>
+                            <RecipeItem recipeData={recipe} navigation={props.navigation} />
+                        </View>
                     ))}
                 </View>
                 <Gap height={12} />

@@ -7,7 +7,18 @@ import { Colors, GlobalStyle } from '../../../styles';
 import IngredientsItem from './common/ingredientsItem';
 import StepsItem from './common/stepsItem';
 
-class ViewRecipe extends Component {
+interface ViewRecipeProps {
+    route?: any,
+    navigation?: any
+}
+
+interface ViewRecipeState {}
+
+class ViewRecipe extends Component<ViewRecipeProps, ViewRecipeState> {
+    constructor(props: ViewRecipeProps){
+        super(props);
+    }
+
     render() {
         return (
             <ScrollView showsVerticalScrollIndicator={false}>

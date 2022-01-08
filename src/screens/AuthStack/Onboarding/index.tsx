@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Image, ScrollView, StyleSheet, View } from 'react-native';
-import { ImgOnboarding } from '../../assets/images';
-import { Button, Heading, Paragraph } from '../../components';
-import { Lang } from '../../configs';
-import { Colors, GlobalStyle } from '../../styles';
+import { ImgOnboarding } from '../../../assets/images';
+import { Button, Heading, Paragraph } from '../../../components';
+import { Lang } from '../../../configs';
+import { Colors, GlobalStyle } from '../../../styles';
 
 interface OnboardingProps {
     navigation: any
@@ -17,7 +17,7 @@ class Onboarding extends Component<OnboardingProps, {}> {
                     <View style={styles.wrapper}>
                         <Heading type='primary' text={Lang.EN.startCooking} style={styles.heading} />
                         <Paragraph type='primary' text={Lang.EN.joinCommunity} style={styles.paragraph} />
-                        <Button onPress={() => this.props.navigation.replace('SignIn')} text={Lang.EN.getStarted} />
+                        <Button onPress={() => this.props.navigation.replace('SignUp')} text={Lang.EN.getStarted} />
                     </View>
                 </View>
             </ScrollView>

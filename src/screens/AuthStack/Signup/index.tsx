@@ -18,7 +18,9 @@ class Signup extends Component<SignupProps, {}> {
             <ScrollView style={GlobalStyle.scrollView} showsVerticalScrollIndicator={false}>
                 <View style={styles.container}>
                     <Heading type='primary' style={styles.heading} text={Lang.EN.wellcome} />
-                    <Paragraph text={Lang.EN.enterAccount} type='secondary' style={styles.paragraph} />
+                    <View>
+                        <Paragraph text={Lang.EN.enterAccount} type='secondary' style={styles.paragraph} />
+                    </View>
                     
                     <Formik
                         initialValues={initFormSignup}
@@ -113,7 +115,9 @@ class Signup extends Component<SignupProps, {}> {
 
                                 <Gap height={GlobalStyle.paddingPrimary} />
                                 <View style={styles.dontHaveAccountWrapper}>
-                                    <Paragraph text={Lang.EN.haveAnAccount} type='secondary' style={styles.haveAnAccount} />
+                                    <View>
+                                        <Paragraph text={Lang.EN.haveAnAccount} type='secondary' style={styles.haveAnAccount} />
+                                    </View>
                                     <TouchableOpacity onPress={() => this.props.navigation.navigate('SignIn')}>
                                         <Heading text={Lang.EN.login} type='tertiary' style={styles.linkSignIn} />
                                     </TouchableOpacity>

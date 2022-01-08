@@ -70,7 +70,9 @@ class VerificationCode extends Component<VerificationCodeProps, VerificationCode
             <ScrollView style={GlobalStyle.scrollView} showsVerticalScrollIndicator={false}>
                 <View style={styles.container}>
                     <Heading type='primary' style={styles.heading} text={Lang.EN.checkYourEmail} />
-                    <Paragraph text={Lang.EN.weSendOTP} type='secondary' style={styles.paragraph} />
+                    <View>
+                        <Paragraph text={Lang.EN.weSendOTP} type='secondary' style={styles.paragraph} />
+                    </View>
                     <Gap height={32} />
                     <OTPInputView
                         autoFocusOnLoad
@@ -80,7 +82,7 @@ class VerificationCode extends Component<VerificationCodeProps, VerificationCode
                         codeInputHighlightStyle={styles.codeInputHighlightStyle}
                         onCodeFilled = {(code) => {
                             console.log(code);
-                            this.props.navigation.replace('HomeStack', { screen: 'Home' });
+                            this.props.navigation.replace('BottomTabs');
                         }}
                     />
 

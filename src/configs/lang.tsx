@@ -59,7 +59,8 @@ const Lang = {
         following: "Mengikuti",
         followers: "Pengikut",
         liked: "Menyukai",
-        follow: "Ikuti"
+        follow: "Ikuti",
+        explore: "Eksplor"
     },
     EN: {
         startCooking: "Start Cooking",
@@ -121,7 +122,8 @@ const Lang = {
         following: "Following",
         followers: "Followers",
         liked: "Liked",
-        follow: "Follow"
+        follow: "Follow",
+        explore: "Explore"
     }
 }
 

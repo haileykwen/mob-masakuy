@@ -6,22 +6,32 @@ import { Colors, GlobalStyle } from '../styles';
 
 interface RecipeItemProps {
     recipeData: any,
-    key: any
+    navigation?: any
 }
 
-const RecipeItem = ({recipeData, key}: RecipeItemProps) => {
+const RecipeItem = ({recipeData, navigation}: RecipeItemProps) => {
     return (
-        <View style={styles.container} key={key}>
-            <View style={styles.creator}>
+        <View style={styles.container}>
+            <TouchableOpacity 
+                onPress={() => {
+                    navigation.navigate('ProfileTab', { 
+                        screen: 'Profile',
+                        params: {
+                            user_id: '123'
+                        }
+                    });
+                }} 
+                style={styles.creator}
+            >
                 <Image source={recipeData.displayPic} style={styles.creatorPic} />
                 <Text style={styles.creatorName}>{recipeData.name}</Text>
-            </View>
-            <View style={styles.imageWrapper}>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('RecipeTab', { screen: 'View' })} style={styles.imageWrapper}>
                 <Image source={recipeData.pic} style={styles.pic} />
                 <TouchableOpacity style={styles.loveWrapper}>
                     <Image source={recipeData.like && recipeData.like === true ? IcLoveActive : IcLoveInactive} style={styles.loveIcon} />
                 </TouchableOpacity>
-            </View>
+            </TouchableOpacity>
             <Gap height={GlobalStyle.paddingTertiary} />
             <Heading type='secondary' text={recipeData.title} />
             <Gap height={8} />

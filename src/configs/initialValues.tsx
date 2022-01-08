@@ -1,17 +1,17 @@
 export const initFormLogin = {
-    email: '',
-    password: ''
+    email: 'test@test.com',
+    password: 'P!np1np1n'
 }
 
 export const initFormSignup = {
-    email: '',
-    password: ''
+    email: 'test@test.com',
+    password: 'P!np1np1n'
 }
 
 export const initRecoverPassword = {
-    email: ''
+    email: 'test@test.com'
 }
 
 export const initNewPassword = {
-    password: ''
+    password: 'P!np1np1n'
 }
