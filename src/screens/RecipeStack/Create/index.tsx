@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Image, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { IcImagePicker } from '../../../assets/images';
-import { Button, Gap, Heading, Input, Paragraph, SliderTimer } from '../../../components';
+import { Button, CustomContainer, Gap, Heading, Input, Paragraph, SliderTimer } from '../../../components';
 import { Lang } from '../../../configs';
 import { Colors, GlobalStyle } from '../../../styles';
 
@@ -31,77 +31,97 @@ class Create extends Component<CreateProps, CreateState> {
 
     render() {
         return (
-            <ScrollView showsVerticalScrollIndicator={false}>
-                <View style={styles.container}>
-                    <View style={styles.wrapper}>
-                        <TouchableOpacity>
-                            <Heading type='secondary' style={{color: Colors.secondary}} text={Lang.EN.cancel} />
-                        </TouchableOpacity>
-
-                        <Gap height={32} />
-                        <View>
-                            <View style={styles.imagePicker}>
-                                <TouchableOpacity>
-                                    <Image source={IcImagePicker} style={styles.imagePickerIcon} />
-                                </TouchableOpacity>
-                                <Gap height={GlobalStyle.paddingTertiary} />
-                                <TouchableOpacity>
-                                    <Heading type='tertiary' text={Lang.EN.addCoverPhoto} />
-                                </TouchableOpacity>
-                                <Gap height={8} />
-                                <Paragraph type='tertiary' text={`(${Lang.EN.upTo12Mb})`} />
-                            </View>
-                        </View>
-
-                        <Gap height={GlobalStyle.paddingPrimary} />
-                        <Heading type='secondary' text={Lang.EN.foodName} />
-                        <Gap height={10} />
-                        <Input placeholder={Lang.EN.enterFoodName} />
-
-                        <Gap height={GlobalStyle.paddingPrimary} />
-                        <Heading type='secondary' text={Lang.EN.description} />
-                        <Gap height={10} />
-                        <Input placeholder={Lang.EN.enterFoodName} multiline={true} />
-
-                        <Gap height={GlobalStyle.paddingPrimary} />
-                        <SliderTimer
-                            onChangeDuration={(e: any) => this.onChangeDuration(e)}
-                            duration={this.state.duration}
-                            label={Lang.EN.cookingDuration}
+            <CustomContainer noPadding>
+                <View style={styles.wrapper}>
+                    <TouchableOpacity>
+                        <Heading 
+                            type='secondary' 
+                            text={Lang.EN.cancel}
+                            color={Colors.secondary} 
                         />
+                    </TouchableOpacity>
+
+                    <Gap height={32} />
+                    <View>
+                        <View style={styles.imagePicker}>
+                            <TouchableOpacity>
+                                <Image source={IcImagePicker} style={styles.imagePickerIcon} />
+                            </TouchableOpacity>
+                            <Gap height={GlobalStyle.paddingTertiary} />
+                            <TouchableOpacity>
+                                <Heading 
+                                    type='tertiary' 
+                                    text={Lang.EN.addCoverPhoto} 
+                                />
+                            </TouchableOpacity>
+                            <Gap height={8} />
+                            <Paragraph 
+                                type='tertiary' 
+                                text={`(${Lang.EN.upTo12Mb})`} 
+                            />
+                        </View>
                     </View>
 
-                    <Gap height={8} width={'100%'} style={{backgroundColor: Colors.form}} />
+                    <Gap height={GlobalStyle.paddingPrimary} />
+                    <Heading 
+                        type='secondary' 
+                        text={Lang.EN.foodName} 
+                    />
+                    <Gap height={10} />
+                    <Input placeholder={Lang.EN.enterFoodName} />
 
-                    <View style={styles.wrapper}>
-                        <Heading type='secondary' text={Lang.EN.ingredients} />
+                    <Gap height={GlobalStyle.paddingPrimary} />
+                    <Heading 
+                        type='secondary' 
+                        text={Lang.EN.description} 
+                    />
+                    <Gap height={10} />
+                    <Input placeholder={Lang.EN.enterFoodName} multiline={true} />
 
-                        <Gap height={GlobalStyle.paddingPrimary} />
-                        <Input type='ingredients' placeholder={Lang.EN.enterIngredient} />
-
-                        <Gap height={32} />
-                        <Button type='ingredients' text={Lang.EN.ingredients} />
-                    </View>
-
-                    <Gap height={8} width={'100%'} style={{backgroundColor: Colors.form}} />
-
-                    <View style={styles.wrapper}>
-                        <Heading type='secondary' text={Lang.EN.steps} />
-
-                        <Gap height={GlobalStyle.paddingPrimary} />
-                        <Input type='steps' index={`${1}`} placeholder={Lang.EN.describeStep} multiline={true} />
-
-                        <Gap height={32} />
-                        <Button type='ingredients' text={Lang.EN.steps} />
-                    </View>
-
-                    <Gap height={8} width={'100%'} style={{backgroundColor: Colors.form}} />
-
-                    <View style={styles.wrapper}>
-                        <Button text={Lang.EN.create} />
-                    </View>
+                    <Gap height={GlobalStyle.paddingPrimary} />
+                    <SliderTimer
+                        onChangeDuration={(e: any) => this.onChangeDuration(e)}
+                        duration={this.state.duration}
+                        label={Lang.EN.cookingDuration}
+                    />
                 </View>
-            </ScrollView>
+
+                <Gap height={8} width={'100%'} style={{backgroundColor: Colors.form}} />
+
+                <View style={styles.wrapper}>
+                    <Heading 
+                        type='secondary' 
+                        text={Lang.EN.ingredients} 
+                    />
+
+                    <Gap height={GlobalStyle.paddingPrimary} />
+                    <Input type='ingredients' placeholder={Lang.EN.enterIngredient} />
+
+                    <Gap height={32} />
+                    <Button type='ingredients' text={Lang.EN.ingredients} />
+                </View>
+
+                <Gap height={8} width={'100%'} style={{backgroundColor: Colors.form}} />
+
+                <View style={styles.wrapper}>
+                    <Heading 
+                        type='secondary' 
+                        text={Lang.EN.steps} 
+                    />
+
+                    <Gap height={GlobalStyle.paddingPrimary} />
+                    <Input type='steps' index={`${1}`} placeholder={Lang.EN.describeStep} multiline={true} />
+
+                    <Gap height={32} />
+                    <Button type='ingredients' text={Lang.EN.steps} />
+                </View>
+
+                <Gap height={8} width={'100%'} style={{backgroundColor: Colors.form}} />
+
+                <View style={styles.wrapper}>
+                    <Button text={Lang.EN.create} />
+                </View>
+            </CustomContainer>
         );
     }
 }
@@ -109,10 +129,6 @@ class Create extends Component<CreateProps, CreateState> {
 export default Create;
 
 const styles = StyleSheet.create({
-    container: {
-        minHeight: GlobalStyle.fullHeight - GlobalStyle.statusBarHeight,
-        backgroundColor: Colors.white,
-    },
     wrapper: {
         padding: GlobalStyle.paddingPrimary
     },

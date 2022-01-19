@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Paragraph } from '../../../../components';
-import { Colors, GlobalStyle } from '../../../../styles';
+import { Colors } from '../../../../styles';
 
 interface StepsItemProps {
     number: string,
@@ -12,9 +12,16 @@ const StepsItem = (props: StepsItemProps) => {
     return (
         <View style={styles.container}>
             <View style={styles.number}>
-                <Paragraph type='tertiary' text={props.number} style={{color: Colors.white}} />
+                <Paragraph 
+                    type='tertiary' 
+                    text={props.number}
+                    color={Colors.white}
+                />
             </View>
-            <Paragraph type='secondary' text={props.text} />
+            <Paragraph 
+                type='secondary' 
+                text={props.text} 
+            />
         </View>
     );
 }
@@ -32,6 +39,7 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         alignItems: 'center',
         marginRight: 16,
-        backgroundColor: Colors.textMain
+        backgroundColor: Colors.textMain,
+        justifyContent: 'center'
     }
 });
