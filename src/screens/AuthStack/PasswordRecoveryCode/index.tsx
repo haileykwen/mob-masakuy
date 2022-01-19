@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { ScrollView, StyleSheet, View } from 'react-native';
-import { Button, Gap, Heading, Paragraph } from '../../../components';
+import { StyleSheet, View } from 'react-native';
+import { Button, CustomContainer, Gap, Heading, Paragraph } from '../../../components';
 import { Lang } from '../../../configs';
 import { Colors, GlobalStyle } from '../../../styles';
 import OTPInputView from '@twotalltotems/react-native-otp-input';
@@ -67,35 +67,51 @@ class PasswordRecoveryCode extends Component<PasswordRecoveryCodeProps, Password
 
     render() {
         return (
-            <ScrollView style={GlobalStyle.scrollView} showsVerticalScrollIndicator={false}>
-                <View style={styles.container}>
-                    <Heading type='primary' style={styles.heading} text={Lang.EN.checkYourEmail} />
-                    <View>
-                        <Paragraph text={Lang.EN.weSendOTP} type='secondary' style={styles.paragraph} />
-                    </View>
-                    <Gap height={32} />
-                    <OTPInputView
-                        autoFocusOnLoad
-                        style={styles.otp}
-                        pinCount={4}
-                        codeInputFieldStyle={styles.codeInputFieldStyle}
-                        codeInputHighlightStyle={styles.codeInputHighlightStyle}
-                        onCodeFilled = {(code) => {
-                            console.log(code);
-                            this.props.navigation.replace('NewPassword');
-                        }}
+            <CustomContainer center>
+                <Heading 
+                    type='primary'
+                    text={Lang.EN.checkYourEmail}
+                    align='center'
+                />
+                <Gap height={8} />
+
+                <Paragraph 
+                    text={Lang.EN.weSendOTP} 
+                    type='secondary' 
+                    align='center'
+                />
+                <Gap height={64} />
+
+                <OTPInputView
+                    autoFocusOnLoad
+                    style={styles.otp}
+                    pinCount={4}
+                    codeInputFieldStyle={styles.codeInputFieldStyle}
+                    codeInputHighlightStyle={styles.codeInputHighlightStyle}
+                    onCodeFilled = {(code) => {
+                        console.log(code);
+                        this.props.navigation.replace('NewPassword');
+                    }}
+                />
+
+                <View style={styles.codeExpireWrapper}>
+                    <Paragraph 
+                        text={Lang.EN.codeExpire} 
+                        type='secondary' 
+                        color={Colors.textMain}
                     />
-
-                    <View style={styles.codeExpireWrapper}>
-                        <Paragraph text={Lang.EN.codeExpire} type='secondary' style={styles.codeExpire} />
-                        <Paragraph text={`${this.getMinute()}:${this.getSecond()}`} type='secondary' style={styles.codeExpireTime} />
-                    </View>
-
-                    <Button text={Lang.EN.verify} />
-                    <Gap height={GlobalStyle.paddingTertiary} />
-                    <Button text={Lang.EN.resend} type='outline' />
+                    <Gap width={5} />
+                    <Paragraph 
+                        text={`${this.getMinute()}:${this.getSecond()}`} 
+                        type='secondary' 
+                        color={Colors.secondary}
+                    />
                 </View>
-            </ScrollView>
+
+                <Button text={Lang.EN.verify} />
+                <Gap height={GlobalStyle.paddingTertiary} />
+                <Button text={Lang.EN.resend} type='outline' />
+            </CustomContainer>
         );
     }
 }
@@ -103,20 +119,6 @@ class PasswordRecoveryCode extends Component<PasswordRecoveryCodeProps, Password
 export default PasswordRecoveryCode;
 
 const styles = StyleSheet.create({
-    container: {
-        minHeight: GlobalStyle.fullHeight - GlobalStyle.statusBarHeight,
-        padding: GlobalStyle.paddingPrimary,
-        justifyContent: 'center',
-        backgroundColor: Colors.white
-    },
-    heading: {
-        textAlign: 'center',
-        marginBottom: 8
-    },
-    paragraph: {
-        textAlign: 'center',
-        marginBottom: 32
-    },
     otp: {
         width: '100%', 
         height: 72,
@@ -138,14 +140,6 @@ const styles = StyleSheet.create({
     codeInputHighlightStyle: {
         borderColor: Colors.primary,
         borderWidth: 2
-    },
-    codeExpire: {
-        color: Colors.textMain,
-        textAlign: 'center',
-        marginRight: 5
-    },
-    codeExpireTime: {
-        color: Colors.secondary
     },
     codeExpireWrapper: {
         flexDirection: 'row',

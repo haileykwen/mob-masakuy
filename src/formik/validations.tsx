@@ -1,7 +1,7 @@
 import * as Yup from 'yup';
-import { Lang } from '.';
+import { Lang } from '../configs';
 
-export const validationFormLogin = Yup.object().shape({
+export const formLoginValidation = Yup.object().shape({
     email: Yup
         .string()
         .required(Lang.EN.required),
@@ -10,7 +10,7 @@ export const validationFormLogin = Yup.object().shape({
         .required(Lang.EN.required)
 });
 
-export const validationFormSignup = Yup.object().shape({
+export const formSignupValidation = Yup.object().shape({
     email: Yup
         .string()
         .email(Lang.EN.invalidEmail)
@@ -40,14 +40,14 @@ export const validationFormSignup = Yup.object().shape({
         .required(Lang.EN.required)
 });
 
-export const validationRecoverPassword = Yup.object().shape({
+export const formRecoverPasswordValidation = Yup.object().shape({
     email: Yup
         .string()
         .email(Lang.EN.invalidEmail)
         .required(Lang.EN.required)
 });
 
-export const validationNewPassword = Yup.object().shape({
+export const formNewPasswordValidation = Yup.object().shape({
     password: Yup
         .string()
         .matches(

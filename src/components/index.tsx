@@ -8,6 +8,9 @@ import ButtonSelect from "./buttonSelect";
 import RecipeList from "./recipesList";
 import SliderTimer from "./slider";
 
+import CustomContainer from "./customContainer";
+import CustomChecker from "./customChecker";
+
 export {
     Button,
     Gap,
@@ -17,5 +20,8 @@ export {
     SearchBar,
     ButtonSelect,
     RecipeList,
-    SliderTimer
+    SliderTimer,
+
+    CustomContainer,
+    CustomChecker
 }

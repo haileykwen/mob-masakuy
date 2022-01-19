@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Image, ScrollView, StyleSheet, View } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 import { ImgOnboarding } from '../../../assets/images';
-import { Button, Heading, Paragraph } from '../../../components';
+import { Button, CustomContainer, Gap, Heading, Paragraph } from '../../../components';
 import { Lang } from '../../../configs';
-import { Colors, GlobalStyle } from '../../../styles';
+import { GlobalStyle } from '../../../styles';
 
 interface OnboardingProps {
     navigation: any
@@ -11,16 +11,26 @@ interface OnboardingProps {
 class Onboarding extends Component<OnboardingProps, {}> {
     render() {
         return (
-            <ScrollView contentContainerStyle={{flexGrow: 1}} style={GlobalStyle.scrollView} showsVerticalScrollIndicator={false}>
-                <View style={styles.container}>
-                    <Image resizeMode='cover' style={styles.image} source={ImgOnboarding} />
-                    <View style={styles.wrapper}>
-                        <Heading type='primary' text={Lang.EN.startCooking} style={styles.heading} />
-                        <Paragraph type='primary' text={Lang.EN.joinCommunity} style={styles.paragraph} />
-                        <Button onPress={() => this.props.navigation.replace('SignUp')} text={Lang.EN.getStarted} />
-                    </View>
+            <CustomContainer center noPadding>
+                <Image resizeMode='cover' style={styles.image} source={ImgOnboarding} />
+                <View style={styles.wrapper}>
+                    <Gap height={24} />
+                    <Heading 
+                        type='primary' 
+                        text={Lang.EN.startCooking} 
+                        align='center'
+                    />
+                    <Gap height={16} />
+                    <Paragraph 
+                        type='primary' 
+                        text={Lang.EN.joinCommunity} 
+                        style={styles.paragraph} 
+                        align='center'
+                    />
+                    <Gap height={72} />
+                    <Button onPress={() => this.props.navigation.replace('SignUp')} text={Lang.EN.getStarted} />
                 </View>
-            </ScrollView>
+            </CustomContainer>
         );
     }
 }
@@ -28,24 +38,12 @@ class Onboarding extends Component<OnboardingProps, {}> {
 export default Onboarding;
 
 const styles = StyleSheet.create({
-    container: {
-        minHeight: GlobalStyle.fullHeight - GlobalStyle.statusBarHeight,
-        alignItems: 'center',
-        backgroundColor: Colors.white
-    },
     image: {
         width: GlobalStyle.fullWidth,
         height: GlobalStyle.fullHeight - GlobalStyle.statusBarHeight - 326
     },
-    heading: {
-        textAlign: 'center',
-        marginTop: 24,
-        marginBottom: 16
-    },
     paragraph: {
-        width: 209,
-        textAlign: 'center',
-        marginBottom: 72
+        width: 209
     },
     wrapper: {
         width: GlobalStyle.fullWidth,

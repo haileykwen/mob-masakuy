@@ -5,24 +5,43 @@ import { Colors, GlobalStyle } from '../styles';
 interface ParagraphProps {
     text: string,
     style?: object,
-    type: string
+    type: 'primary' | 'secondary' | 'tertiary',
+    align?: 'left' | 'center' | 'right',
+    color?: string
 }
 
-const Paragraph = ({text, style, type}: ParagraphProps) => {
+const Paragraph = (props: ParagraphProps) => {
     return (
-        <Text style={[styles({type, text}).paragraph, style && style]}>{text}</Text>
+        <Text style={[styles(props).paragraph, props.style && props.style]}>{props.text}</Text>
     );
 }
 
 export default Paragraph;
 
-const styles = ({type}: ParagraphProps) => StyleSheet.create({
+const styles = (props: ParagraphProps) => StyleSheet.create({
     paragraph: {
         fontFamily: GlobalStyle.fontPrimaryRegular,
-        fontSize: type === 'primary' ? GlobalStyle.P1 : type === 'secondary' ? GlobalStyle.P2 : GlobalStyle.P3,
-        lineHeight: type === 'primary' ? GlobalStyle.LP1 : type === 'secondary' ? GlobalStyle.LP2 : GlobalStyle.LP3,
-        color: Colors.textSecondary,
-        flex: 1,
-        textAlignVertical: 'center'
+        color: props.color ? props.color : Colors.textSecondary,
+        fontSize: props.type === 'primary' 
+            ? GlobalStyle.P1 
+            : props.type === 'secondary' 
+                ? GlobalStyle.P2 
+                : props.type === 'tertiary'
+                    ? GlobalStyle.P3
+                    : GlobalStyle.P1,
+        lineHeight: props.type === 'primary' 
+                ? GlobalStyle.LP1 
+                : props.type === 'secondary' 
+                    ? GlobalStyle.LP2 
+                    : props.type === 'tertiary' 
+                        ? GlobalStyle.LP3
+                        : GlobalStyle.LP1,
+        textAlign: props.align === 'left' 
+                ? 'left'
+                : props.align === 'center' 
+                    ? 'center'
+                    : props.align === 'right' 
+                        ? 'right'
+                        : 'left'
     }
 });
