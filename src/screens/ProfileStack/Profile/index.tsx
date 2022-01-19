@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Image, ScrollView, StyleSheet, View } from 'react-native';
-import { Button, Gap, Heading, Paragraph } from '../../../components';
+import { Image, StyleSheet, View } from 'react-native';
+import { Button, CustomContainer, Gap, Heading, Paragraph } from '../../../components';
 import { Lang } from '../../../configs';
 import { DummyMyProfile } from '../../../configs/dummy';
 import { Colors, GlobalStyle } from '../../../styles';
@@ -58,33 +58,37 @@ class Profile extends Component<ProfileProps, ProfileState> {
 
     render() {
         return (
-            <ScrollView showsVerticalScrollIndicator={false}>
-                <View style={styles(this.props).container}>
-                    <View style={styles(this.props).userInfo}>
-                        <Image source={DummyMyProfile.pic} style={styles(this.props).userPic} />
-                        <Heading type='secondary' text={DummyMyProfile.name} />
-                        <View style={styles(this.props).userPopularity}>
-                            <View style={styles(this.props).userPopularityItem}>
-                                <Heading type='secondary' text={DummyMyProfile.recipes} />
-                                <Paragraph type='tertiary' text={Lang.EN.recipes} />
-                            </View>
-                            <View style={styles(this.props).userPopularityItem}>
-                                <Heading type='secondary' text={DummyMyProfile.following} />
-                                <Paragraph type='tertiary' text={Lang.EN.following} />
-                            </View>
-                            <View style={styles(this.props).userPopularityItem}>
-                                <Heading type='secondary' text={DummyMyProfile.followers} />
-                                <Paragraph type='tertiary' text={Lang.EN.followers} />
-                            </View>
+            <CustomContainer 
+                noPadding
+                minHeight={this.props.route.params && this.props.route.params.user_id 
+                    ? GlobalStyle.fullHeight - GlobalStyle.statusBarHeight + 362.3
+                    : GlobalStyle.fullHeight - GlobalStyle.statusBarHeight - 48.8 + 270.9
+                }
+            >
+                <View style={styles(this.props).userInfo}>
+                    <Image source={DummyMyProfile.pic} style={styles(this.props).userPic} />
+                    <Heading type='secondary' text={DummyMyProfile.name} />
+                    <View style={styles(this.props).userPopularity}>
+                        <View style={styles(this.props).userPopularityItem}>
+                            <Heading type='secondary' text={DummyMyProfile.recipes} />
+                            <Paragraph type='tertiary' text={Lang.EN.recipes} />
                         </View>
-                        {this.props.route.params && this.props.route.params.user_id && <Button text={Lang.EN.follow} />}
+                        <View style={styles(this.props).userPopularityItem}>
+                            <Heading type='secondary' text={DummyMyProfile.following} />
+                            <Paragraph type='tertiary' text={Lang.EN.following} />
+                        </View>
+                        <View style={styles(this.props).userPopularityItem}>
+                            <Heading type='secondary' text={DummyMyProfile.followers} />
+                            <Paragraph type='tertiary' text={Lang.EN.followers} />
+                        </View>
                     </View>
-
-                    <Gap height={8} width={'100%'} style={{backgroundColor: Colors.form}} />
-
-                    <ProfileTab navigation={this.props.navigation} />
+                    {this.props.route.params && this.props.route.params.user_id && <Button text={Lang.EN.follow} />}
                 </View>
-            </ScrollView>
+
+                <Gap height={8} width={'100%'} style={{backgroundColor: Colors.form}} />
+
+                <ProfileTab navigation={this.props.navigation} />
+            </CustomContainer>
         );
     }
 }
@@ -92,12 +96,6 @@ class Profile extends Component<ProfileProps, ProfileState> {
 export default Profile;
 
 const styles = (props: ProfileProps) => StyleSheet.create({
-    container: {
-        minHeight: props.route.params && props.route.params.user_id ? 
-            GlobalStyle.fullHeight - GlobalStyle.statusBarHeight + ((GlobalStyle.fullHeight - GlobalStyle.statusBarHeight) / 1.81953642384106)
-            : GlobalStyle.fullHeight - 48.8 - GlobalStyle.statusBarHeight + ((GlobalStyle.fullHeight - GlobalStyle.statusBarHeight) / 2.434108527131783),
-        backgroundColor: Colors.white
-    },
     userInfo: {
         padding: GlobalStyle.paddingPrimary,
         justifyContent: 'center',
