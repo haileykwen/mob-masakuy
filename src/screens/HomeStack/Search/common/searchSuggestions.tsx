@@ -12,7 +12,12 @@ interface SearchSuggestionsProps {
 const SearchSuggestions = ({suggestions, onChoose}: SearchSuggestionsProps) => {
     return (
         <View>
-            <Heading text={Lang.EN.searchSuggestions} type='secondary' style={styles.heading} />
+            <Heading 
+                text={Lang.EN.searchSuggestions} 
+                type='secondary' 
+                style={styles.heading} 
+            />
+            
             <View style={styles.container}>
                 {suggestions.map((suggestion: any, index: any) => (
                     <TouchableOpacity key={index} style={styles.touhcable} onPress={() => onChoose(suggestion)}>

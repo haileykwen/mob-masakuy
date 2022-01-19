@@ -20,7 +20,7 @@ const SearchHistory = ({histories, onChoose}: SearchHistoryProps) => {
                         <Paragraph 
                             text={history} 
                             type='primary' 
-                            style={{color: Colors.textMain}}
+                            color={Colors.textMain}
                         />
                     </View>
                     <Image source={IcArrowUpward} style={styles.icon} />

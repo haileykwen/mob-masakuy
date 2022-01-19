@@ -1,7 +1,7 @@
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import React, { Component } from 'react';
-import { ScrollView, StyleSheet, View } from 'react-native';
-import { ButtonSelect, Gap, Heading, SearchBar } from '../../../components';
+import { StyleSheet, View } from 'react-native';
+import { ButtonSelect, CustomContainer, Gap, Heading, SearchBar } from '../../../components';
 import { Lang } from '../../../configs';
 import { Colors, GlobalStyle } from '../../../styles';
 import Explore from './common/explore';
@@ -60,42 +60,43 @@ class Home extends Component<HomeProps, HomeState> {
 
     render() {
         return (
-            <ScrollView showsVerticalScrollIndicator={false}>
-                <View style={styles.container}>
-                    <View style={styles.wrapper}>
-                        <SearchBar 
-                            placeholder={Lang.EN.search}
-                            onSearchBarPress={() => this.props.navigation.navigate('Search')} 
+            <CustomContainer 
+                noPadding
+                minHeight={GlobalStyle.fullHeight - GlobalStyle.statusBarHeight - 48.8 + 226.7}
+            >
+                <View style={styles.wrapper}>
+                    <SearchBar 
+                        placeholder={Lang.EN.search}
+                        onSearchBarPress={() => this.props.navigation.navigate('Search')} 
+                    />
+                    <Gap height={GlobalStyle.paddingPrimary} />
+                    <Heading type='secondary' text={Lang.EN.category} />
+                    <Gap height={GlobalStyle.paddingTertiary} />
+                    <View style={styles.buttonSelectWrapper}>
+                        <ButtonSelect 
+                            text={Lang.EN.all} 
+                            active={this.state.selectedCategory === 'all' ? true : false} 
+                            onPress={() => this.setState({ selectedCategory: 'all' })}
                         />
-                        <Gap height={GlobalStyle.paddingPrimary} />
-                        <Heading type='secondary' text={Lang.EN.category} />
-                        <Gap height={GlobalStyle.paddingTertiary} />
-                        <View style={styles.buttonSelectWrapper}>
-                            <ButtonSelect 
-                                text={Lang.EN.all} 
-                                active={this.state.selectedCategory === 'all' ? true : false} 
-                                onPress={() => this.setState({ selectedCategory: 'all' })}
-                            />
-                            <Gap width={GlobalStyle.paddingTertiary} />
-                            <ButtonSelect 
-                                text={Lang.EN.food} 
-                                active={this.state.selectedCategory === 'food' ? true : false}
-                                onPress={() => this.setState({ selectedCategory: 'food' })} 
-                            />
-                            <Gap width={GlobalStyle.paddingTertiary} />
-                            <ButtonSelect 
-                                text={Lang.EN.drink} 
-                                active={this.state.selectedCategory === 'drink' ? true : false} 
-                                onPress={() => this.setState({ selectedCategory: 'drink' })}
-                            />
-                        </View>
+                        <Gap width={GlobalStyle.paddingTertiary} />
+                        <ButtonSelect 
+                            text={Lang.EN.food} 
+                            active={this.state.selectedCategory === 'food' ? true : false}
+                            onPress={() => this.setState({ selectedCategory: 'food' })} 
+                        />
+                        <Gap width={GlobalStyle.paddingTertiary} />
+                        <ButtonSelect 
+                            text={Lang.EN.drink} 
+                            active={this.state.selectedCategory === 'drink' ? true : false} 
+                            onPress={() => this.setState({ selectedCategory: 'drink' })}
+                        />
                     </View>
-
-                    <Gap width={'100%'} height={8} style={{backgroundColor: Colors.form}} />
-
-                    <HomeTab navigation={this.props.navigation} />
                 </View>
-            </ScrollView>
+
+                <Gap width={'100%'} height={8} style={{backgroundColor: Colors.form}} />
+
+                <HomeTab navigation={this.props.navigation} />
+            </CustomContainer>
         );
     }
 }
@@ -103,13 +104,8 @@ class Home extends Component<HomeProps, HomeState> {
 export default Home;
 
 const styles = StyleSheet.create({
-    container: {
-        minHeight: GlobalStyle.fullHeight - 48.8 - GlobalStyle.statusBarHeight + ((GlobalStyle.fullHeight - GlobalStyle.statusBarHeight) / 3.067109634551495),
-        backgroundColor: Colors.white
-    },
     wrapper: {
-        paddingHorizontal: GlobalStyle.paddingPrimary,
-        paddingVertical: GlobalStyle.paddingSecondary
+        padding: GlobalStyle.paddingPrimary
     },
     buttonSelectWrapper: {
         flexDirection: 'row'

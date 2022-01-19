@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
-import { Gap } from '../../../components';
+import { CustomContainer, Gap } from '../../../components';
 import { Colors, GlobalStyle } from '../../../styles';
 import SearchControl from './common/searchControl';
 import SearchFilter from './common/searchFilter';
@@ -41,7 +41,7 @@ class Search extends Component<SearchProps, SearchState> {
 
     render() {
         return (
-            <ScrollView showsVerticalScrollIndicator={false}>
+            <CustomContainer noPadding>
                 <View style={styles.container}>
                     <SearchControl
                         value={this.state.search}
@@ -71,7 +71,7 @@ class Search extends Component<SearchProps, SearchState> {
                     onChangeDuration={(e: number) => this.onChangeDuration(e)}
                     closeModal={() => this.setState({ filter: false })}
                 />
-            </ScrollView>
+            </CustomContainer>
         );
     }
 }

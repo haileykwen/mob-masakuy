@@ -1,12 +1,15 @@
 import React, { ReactNode } from 'react';
 import { View, ScrollView, StatusBar, StyleSheet } from 'react-native';
-import { GlobalStyle } from '../styles';
+import { Colors, GlobalStyle } from '../styles';
 
 interface CustomContainerProps {
     children: ReactNode,
     center?: true | false,
     direction?: 'row' | 'column',
-    noPadding?: true | false
+    noPadding?: true | false,
+    backgroundColor?: string,
+    minHeight?: number,
+    nestedScrollEnabled?: boolean
 }
 
 const CustomContainer = (props: CustomContainerProps) => {
@@ -15,7 +18,7 @@ const CustomContainer = (props: CustomContainerProps) => {
     }, []);
 
     return (
-        <ScrollView showsVerticalScrollIndicator={false} >
+        <ScrollView showsVerticalScrollIndicator={false} nestedScrollEnabled={props.nestedScrollEnabled} >
             <StatusBar />
             <View style={styles(props).viewContainer}>
                 {props.children}
@@ -28,7 +31,8 @@ export default CustomContainer;
 
 const styles = (props: CustomContainerProps) => StyleSheet.create({
     viewContainer: {
-        minHeight: GlobalStyle.fullHeight - GlobalStyle.statusBarHeight,
+        backgroundColor: props.backgroundColor ? props.backgroundColor : Colors.white,
+        minHeight: props.minHeight ? props.minHeight : GlobalStyle.fullHeight - GlobalStyle.statusBarHeight,
         padding: props.noPadding ? 0 : GlobalStyle.paddingPrimary,
         justifyContent: props.center ? 'center' : 'flex-start'
     }

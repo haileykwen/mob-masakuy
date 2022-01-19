@@ -23,10 +23,18 @@ const SearchFilter = (props: SearchFilterProps) => {
         >
             <View style={styles.centeredView}>
                 <View style={styles.modalView}>
-                    <Heading text={Lang.EN.addFilter} style={styles.headingFilter} />
+                    <Heading 
+                        text={Lang.EN.addFilter} 
+                        align='center'
+                    />
+                    <Gap height={32} />
 
-                    <Heading type='secondary' text={Lang.EN.category} />
+                    <Heading 
+                        type='secondary' 
+                        text={Lang.EN.category} 
+                    />
                     <Gap height={GlobalStyle.paddingTertiary} />
+                    
                     <View style={styles.buttonSelectWrapper}>
                         <ButtonSelect 
                             text={Lang.EN.all} 
@@ -100,28 +108,10 @@ const styles = StyleSheet.create({
         marginBottom: 15,
         textAlign: "center"
     },
-    headingFilter: {
-        textAlign: 'center',
-        marginBottom: 32
-    },
     buttonSelectWrapper: {
         flexDirection: 'row',
         marginBottom: 32
     },
-    // headingCookingDurationWrapper: {
-    //     flexDirection: 'row',
-    //     marginBottom: 16
-    // },
-    // headingCookingDurationInMinutes: {
-    //     color: Colors.textSecondary,
-    //     fontWeight: '300',
-    //     marginLeft: 5
-    // },
-    // durationWrapper: {
-    //     flexDirection: 'row',
-    //     justifyContent: 'space-between',
-    //     marginBottom: 8
-    // },
     buttonWrapper: {
         flexDirection: 'row',
         marginBottom: 0,

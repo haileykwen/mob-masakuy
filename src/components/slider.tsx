@@ -19,9 +19,9 @@ const SliderTimer = (props: SliderTimerProps) => {
                 <Heading type='secondary' text={`(${Lang.EN.inMinutes})`} style={styles.headingCookingDurationInMinutes} />
             </View>
             <View style={styles.durationWrapper}>
-                <Heading text='<10' style={{color: Colors.textSecondary}} />
-                <Heading text={props.duration} style={{color: Colors.primary}} />
-                <Heading text='>60' style={{color: Colors.textSecondary}} />
+                <Heading type='tertiary' text='<10' style={{color: Colors.textSecondary}} />
+                <Heading type='tertiary' text={props.duration} style={{color: Colors.primary}} />
+                <Heading type='tertiary' text='>60' style={{color: Colors.textSecondary}} />
             </View>
             <Slider
                 style={{width: '100%'}}
